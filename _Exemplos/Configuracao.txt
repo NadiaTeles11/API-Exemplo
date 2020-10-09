@@ -1,0 +1,375 @@
+********************ADMINISTRADOR****************************
+
+mutation {
+  sistemaAdministrador_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    administrador: { 
+      id:1,
+      administradorLogin:"NEXCODE11",
+      administradorSenha:"12345689"
+      
+      
+      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+********************ORGANIZACAO****************************
+
+mutation {
+  sistemaOrganizacao_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    organizacao: { 
+      id:1,
+      organizacaoNome:"NEXCODE11",
+      organizacaoEstrutura:1,
+      organizacaoImagem:2
+      
+      
+      
+      
+      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+
+********************AMBIENTE INTERFACE****************************
+
+mutation {
+  sistemaAmbienteInterface_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    inter: { 
+      id:1,
+      interfacePadrao:1,
+      interfaceConfiguracao:2,
+      interfaceImagem:3
+      
+    
+      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+
+********************AMBIENTE LOGIN****************************
+
+mutation {
+  sistemaAmbienteLogin_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    login: { 
+      id:1,
+      loginUsuarioDigitos:5,
+      loginSenhaDigitos:2,
+      loginSenhaCaracter:3,
+      loginSenhaRenovacao:4
+          
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+
+********************AMBIENTE COMPLEMENTO****************************
+
+mutation {
+  sistemaAmbienteComplemento_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    complemento: { 
+      id:1,
+      pessoaComplemento1:"L",
+      pessoaComplemento2:"U",
+      pessoaComplemento3:"a",
+      pessoaComplemento4:"n"
+      
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+
+********************AMBIENTE INTEGRACAO****************************
+mutation {
+  sistemaAmbienteIntegracao_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    integracao: { 
+      id:1,
+      solucaoIntegrada:2,
+      solucaoEspecifica:"attt"
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+********************SOFTWARE REGISTRY****************************
+
+mutation {
+  sistemaSoftwareRegistry_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    registry: { 
+      id:1,
+      registryIp:"192.168.0.200"
+      registryPorta:4  
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+
+********************SOFTWARE NOTIFICATION****************************
+
+mutation {
+  sistemaSoftwareNotification_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    notification: { 
+      id:1,
+      notificationIp:"5",
+      notificationPorta1:5,
+      notificationPorta2:5
+      
+
+      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso        
+  }
+}
+
+
+********************SOFTWARE UTILITY****************************
+
+mutation {
+  sistemaSoftwareUtility_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    utility: { 
+      id:1,
+      utilityIp:"2"
+      utilityPorta:1
+           
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso
+  }
+}
+
+
+********************SOFTWARE MOBILE****************************
+
+mutation {
+  sistemaSoftwareMobile_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    mobile: { 
+      id:1,
+     	mobileIp:"192.01",
+      mobilePorta1:2,
+      mobilePorta2:3,
+      mobileStatus:false
+      
+      
+      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso
+  }
+}
+
+
+********************SOFTWARE BACKUP****************************
+
+mutation {
+  sistemaSoftwareBackup_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    backup: { 
+      id:1,
+      backupIp:"192.15",
+      backupPorta:2,
+      backupProgramacao:3,
+      backupDia:4,
+      backupHora:"2020-03-03"
+      backupDiretorio:"2020-04-04",
+      backupStatus:false
+      
+      
+      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso
+  }
+}
+
+********************SOFTWARE INTEGRATION****************************
+
+mutation {
+  sistemaSoftwareIntegration_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    integration: { 
+      id:1,
+     	integrationIp:"192.16",
+      integrationPorta:2,
+      integrationLogin:"luanfmendes",
+      integrationSenha:"senha",
+      integrationStatus:true      
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso
+  }
+}
+
+
+********************SOFTWARE PLATAFORMA****************************
+
+mutation {
+  sistemaSoftwarePlataforma_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    plataforma: { 
+      id:1,
+     	plataformaIp:"129.24",
+      plataformaExt:"xxx",
+      plataformaPorta:2
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso
+  }
+}

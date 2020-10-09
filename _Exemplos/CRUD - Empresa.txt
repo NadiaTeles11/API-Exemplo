@@ -1,0 +1,151 @@
+********GetAll*********
+
+query {
+ reparticaoEmpresa(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      nome
+      grupo
+      gestor
+      telefone1
+      telefone2
+      email
+      cnpj
+      ie
+      complemento1
+      complemento2
+      classificacao
+      enderecoComplemento
+      enderecoNumero
+      enderecoBairro
+      enderecoCep
+      enderecoCidade
+      enderecoEstado
+      enderecoPais
+      observacao
+      dataCadastro
+      
+    }     
+  }
+}
+
+********Insert*********
+
+mutation {
+  reparticaoEmpresa_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    empresa: {  
+   				nome:"nome entidade",
+          grupo:"",
+          gestor:"gestor entidade",
+          telefone1:"123654987",
+          telefone2:"123987645",
+          email:"email@teste.com.br",
+          cnpj:"11xx123456798",
+          ie:"ie",
+          complemento1:"111",
+          complemento2:"1111",
+          classificacao:2,
+          enderecoLogradouro:"endereco",
+          enderecoNumero:"447",
+      		enderecoComplemento:"complnto"
+          enderecoBairro:"jd nova york",
+          enderecoCep:"08456752",
+          enderecoCidade:"sp",
+          enderecoEstado:"mg",
+          enderecoPais:"bolivia",
+          observacao:"nenhuma obser",
+          dataCadastro:"2020-02-02"
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  reparticaoEmpresa_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    empresa: {  
+      	  id:7,
+   				nome:"TESTE",
+          grupo:"",
+          gestor:"gestor entidade",
+          telefone1:"123654987",
+          telefone2:"123987645",
+          email:"email@teste.com.br",
+          cnpj:"11xx123456798",
+          ie:"ie",
+          complemento1:"111",
+          complemento2:"1111",
+          classificacao:2,
+          enderecoLogradouro:"endereco",
+          enderecoNumero:"447",
+      		enderecoComplemento:"complnto"
+          enderecoBairro:"jd nova york",
+          enderecoCep:"08456752",
+          enderecoCidade:"sp",
+          enderecoEstado:"mg",
+          enderecoPais:"bolivia",
+          observacao:"nenhuma obser",
+          dataCadastro:"2020-02-02"
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************DELETE************
+
+
+mutation {
+  reparticaoEmpresa_Excluir(id : 7
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

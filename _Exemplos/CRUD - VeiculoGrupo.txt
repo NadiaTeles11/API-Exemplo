@@ -1,0 +1,96 @@
+********GetAll*********
+
+query {
+  grupoVeiculo(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+      
+    }     
+      
+  }
+}
+
+********Insert*********
+
+mutation {
+  grupoVeiculo_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    veiculoGrupo: {     
+      veiculoGrupo:"tex",
+      veiculoInterno:false,
+      veiculoVisitante:true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  grupoVeiculo_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    veiculoGrupo: {     
+      id:7,
+      veiculoGrupo:"xxx",
+      veiculoInterno:false,
+      veiculoVisitante:true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso  
+    objeto
+  }
+}
+
+************DELETE************
+
+mutation {
+  grupoVeiculo_Excluir(id : 62
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

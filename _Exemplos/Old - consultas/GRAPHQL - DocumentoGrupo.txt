@@ -1,0 +1,226 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os documento grupo
+
+query{
+  documentoGrupo{
+    nodes{
+      id
+      interno
+      ordem
+      prestador
+      tipo
+      validacao
+      visitante
+    }
+  }
+}
+
+Obtem todos os documento grupo ordenando pelo modelo ascendente
+
+query {
+  documentoGrupo( order_by: {id: ASC} )   {
+    nodes{
+  			id
+        interno
+        ordem
+        prestador
+        tipo
+        validacao
+        visitante
+    }     
+  }
+}
+
+
+Obtem todos os documento grupo ordenando pelo modelo descendente
+
+query{
+  documentoGrupo(order_by:{id:DESC}){
+    nodes{
+      id
+      interno
+      ordem
+      prestador
+      tipo
+      validacao
+      visitante
+    }
+  }
+}
+
+Obtem a entidade pelo ID
+
+query {
+  documentoGrupo(where: {id: 1035} )  {
+    nodes{
+      	  id
+          interno
+          ordem
+          prestador
+          tipo
+          validacao
+          visitante
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+  documentoGrupo(where: { tipo_contains: "C"} order_by:{id: ASC} )  {
+    nodes{
+      id
+      interno
+      ordem
+      prestador
+      tipo
+      validacao
+      visitante
+    }     
+  }
+}
+
+
+Filtrando por duas condições
+
+query {
+  documentoGrupo(where:{AND: [{tipo_contains : "C" }, {tipo_contains: "R" }]} )   {
+    nodes{
+      id
+      interno
+      ordem
+      prestador
+      tipo
+      validacao
+      visitante      
+      
+    }     
+  }
+}
+
+Total de entidades cadastradas
+
+query {
+  documentoGrupo(first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  documentoGrupo(first: 3 order_by:{id: ASC})     {
+    nodes{
+      id
+      interno
+      ordem
+      prestador
+      tipo
+      validacao
+      visitante
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  documentoGrupo(first: 3 order_by: {id: DESC}) {
+    nodes {
+        id
+        interno
+        ordem
+        prestador
+        tipo
+        validacao
+        visitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  documentoGrupo(order_by: {tipo: ASC} first: 3, after: "Mg==") {
+    nodes {
+        id
+        interno
+        ordem
+        prestador
+        tipo
+        validacao
+        visitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createDocumentoGrupo(inputDocumentoGrupo: {   
+    tipo: "MAT",
+    ordem:1,
+    interno: false,
+    prestador:true,
+    visitante: true,
+    validacao: false
+    
+  })
+  {
+    id
+    tipo
+    ordem
+    interno
+    prestador
+    visitante
+    validacao
+  }
+}
+
+mutation {
+  updateDocumentoGrupo(inputDocumentoGrupo: {   
+    id:1042,
+    tipo: "MAT",
+    ordem:1,
+    interno: false,
+    prestador:true,
+    visitante: true,
+    validacao: false
+    
+  })
+  {
+    id
+    tipo
+    ordem
+    interno
+    prestador
+    visitante
+    validacao
+  }
+}
+
+mutation {
+  deleteDocumentoGrupo(id: 1040) 
+}
+
+
+
+
+
+
+

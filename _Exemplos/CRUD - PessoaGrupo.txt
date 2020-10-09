@@ -1,0 +1,59 @@
+********GetAll*********
+
+query{
+  pessoaGrupo{
+    nodes{
+      id
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }
+  }
+}
+
+********Insert*********
+
+mutation {
+  inserirPessoaGrupo(pessoaGrupo: { 
+      pessoaGrupo:"pe grupo",
+      pessoaInterna:true,
+      pessoaPrestador:true,
+      pessoaVisitante:true
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************Put***************
+
+
+mutation {
+  alterarPessoaGrupo(pessoaGrupo: {
+    	id:75,
+      pessoaGrupo:"teste 99",
+      pessoaInterna:false,
+      pessoaPrestador:false,
+      pessoaVisitante:false
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************DELETE************
+
+
+mutation {
+  excluirPessoaGrupo(id : 83)
+  {   
+    message
+    success
+    
+  }
+}

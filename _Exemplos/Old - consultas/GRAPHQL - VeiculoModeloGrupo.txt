@@ -1,0 +1,171 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos as entidade veiculo modelo
+
+query{
+  veiculoModelo{
+    nodes{
+      id
+      veiculoModelo
+    }
+  }
+}
+
+Obtem todas os veiculo modelo ordenando pelo modelo ascendente
+
+query{
+  veiculoModelo(order_by:{veiculoModelo:ASC}){
+    nodes{
+      id
+      veiculoModelo
+    }
+  }
+}
+
+
+Obtem todas os veiculo modelo ordenando pelo modelo descendente
+
+query{
+  veiculoModelo(order_by:{veiculoModelo:DESC}){
+    nodes{
+      id
+      veiculoModelo
+    }
+  }
+}
+
+Obtem a entidade pelo ID
+
+query {
+  veiculoModelo(where: {id: 1035} )  {
+    nodes{
+      id      
+      veiculoModelo
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+  veiculoModelo(where: { veiculoModelo_contains: "A"} order_by:{id: DESC} )  {
+    nodes{
+      id      
+      veiculoModelo
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  veiculoModelo(where: { veiculoModelo_contains: "A"} order_by:{veiculoModelo: DESC} )  {
+    nodes{
+      id      
+      veiculoModelo
+    }     
+  }
+}
+
+
+
+Filtrando por duas condições
+
+query {
+  veiculoModelo(where:{OR: [{veiculoModelo_contains : "X" }, {veiculoModelo_contains: "10" }]} )   {
+    nodes{
+      id      
+      veiculoModelo
+    }     
+  }
+}
+
+Total de entidades cadastradas
+
+query {
+  veiculoModelo(first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  veiculoModelo(first: 3 order_by:{id: DESC})     {
+    nodes{
+      id      
+      veiculoModelo
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  veiculoModelo(first: 3 order_by: {id: DESC}) {
+    nodes {
+       id      
+       veiculoModelo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  veiculoModelo(order_by: {veiculoModelo: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+       veiculoModelo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createVeiculoModelo(inputVeiculoModelo: {   
+    veiculoModelo: "modelo create"
+    
+  })
+  {
+    id
+    veiculoModelo
+  }
+}
+
+mutation {
+  updateVeiculoModelo(inputVeiculoModelo: {
+    id:1038,
+    veiculoModelo: ""
+    
+  })
+  {
+    id
+    veiculoModelo
+  }
+}
+
+mutation {
+  deleteVeiculoModelo(id: 1037) 
+}
+
+
+
+
+
+

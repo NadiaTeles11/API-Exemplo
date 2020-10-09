@@ -1,0 +1,1 @@
+scaffold-dbContext -provider microsoft.entityframeworkcore.sqlserver -connection "Password=nexcode;Persist Security Info=True;User ID=sa;Initial Catalog=NexcodeControls2020_novo;Data Source=192.168.0.80" -Tables ncEmpresa

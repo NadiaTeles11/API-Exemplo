@@ -1,0 +1,192 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os sites
+query {
+  site  {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+Obtem todos os sites ordenando pelo nome ascendente
+query {
+  site  ( order_by: {nome: ASC} )   {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+Obtem todos os sites ordenando pelo nome descendente
+query {
+  site  ( order_by: {nome: DESC)   {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+Obtem o site pelo ID
+
+query {
+  site   ( where: {id: 21} )  {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+
+
+Filtrando por nome do site e o site contenha os caracteres "SP" como parte do nome e ordenando por nome ascendente
+
+query {
+  site   ( where: { nome_contains: "SP"} )  {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+Filtrando por nome do site e o site contenha os caracteres "SP" como parte do nome e ordenando por nome ascendente
+
+query {
+  site   ( where: { nome_contains: "SP"} order_by: {nome: ASC} )  {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+
+
+
+Filtrando por nome do site e o site contenha os caracteres "SP" e "MG" como parte do nome e ordenando por nome ascendente
+
+query {
+  site  (where: { OR: [{ nome_contains: "SP" }, {nome_contains: "MG" }]} )   {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+Total de sites cadastrados
+query {
+  site  (first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+query {
+  site  (first: 3)     {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  site(first: 3 order_by: {nome: ASC}) {
+    nodes {
+       id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  site(order_by: {nome: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createSite(inputSite: {   
+    nome: "SITE XPTO",
+    nivelAcessoRotativo: 1,
+    observacao: "TESTE"
+  })
+  {
+    id
+    nome
+    nivelAcessoRotativo
+    observacao
+  }
+}
+
+mutation {
+  updateSite(inputSite: { 
+    id: 9,
+    nome: "SITE XPTO x",
+    nivelAcessoRotativo: 10,
+    observacao: "TESTEx"
+  })
+  {
+    id
+    nome
+    nivelAcessoRotativo
+    observacao
+  }
+}
+
+mutation {
+  deleteSite(id: 9) 
+}
+
+
+
+
+

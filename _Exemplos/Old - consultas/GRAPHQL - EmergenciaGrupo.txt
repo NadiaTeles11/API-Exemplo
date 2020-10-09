@@ -1,0 +1,169 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos as emergências
+
+query {
+    emergenciaGrupo{
+    nodes{
+      id
+      emergenciaGrupo
+    }     
+  }
+}
+
+Obtem todas as emergências ordenando pelo nome ascendente
+
+query {
+  emergenciaGrupo  ( order_by: {emergenciaGrupo: ASC} )   {
+    nodes{
+  	id
+    emergenciaGrupo
+    }     
+  }
+}
+Obtem todas as emergências ordenando pelo nome descendente
+
+query{
+  emergenciaGrupo(order_by:{id:DESC}){
+    nodes{
+      id
+      emergenciaGrupo
+    }
+  }
+}
+
+Obtem a emergência pelo ID
+
+query {
+     emergenciaGrupo( where: {id: 7} )  {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+     emergenciaGrupo( where: { emergenciaGrupo_contains: "T"} )  {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  emergenciaGrupo(where: { emergenciaGrupo_contains: "T"} order_by: {id: DESC} )  {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+
+
+Filtrando por duas condições
+
+query {
+    emergenciaGrupo(where: { OR: [{ emergenciaGrupo_contains: "T" }, {emergenciaGrupo_contains: "A" }]} )   {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+Total de emergências cadastradas
+
+query {
+  emergenciaGrupo(first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  emergenciaGrupo(first: 3, order_by:{id: DESC}){
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  emergenciaGrupo(first: 3 order_by: {id: DESC}) {
+    nodes {
+       id      
+       emergenciaGrupo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  emergenciaGrupo(order_by: {id: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+       emergenciaGrupo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createEmergenciaGrupo(inputEemergenciaGrupo: {   
+    emergenciaGrupo:"create"
+    
+  })
+  {
+    id
+    emergenciaGrupo
+  }
+}
+
+
+mutation {
+  updateEmergenciaGrupo(inputEemergenciaGrupo: {
+    id:11,
+    emergenciaGrupo:"update"
+    
+  })
+  {
+    id
+    emergenciaGrupo
+  }
+}
+
+mutation {
+  deleteEmergenciaGrupo(id: 11) 
+}
+
+
+
+
+

@@ -1,0 +1,62 @@
+********GetAll*********
+
+query{
+  logSistema{
+    nodes{
+      id
+      dataHora
+      sistema
+      evento
+      descricao
+    }
+  }
+}
+
+********Insert*********
+
+mutation {
+  inserirLogSistema(logSistema: { 
+      dataHora:"2020-03-02",
+      sistema:"sistema",
+      evento:"evento",
+      descricao:"descrição",
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************Put***************
+
+
+mutation {
+  alterarLogSistema(logSistema: {
+    	id:8,
+      dataHora:"2020-03-02",
+      sistema:"atualizado",
+      evento:"eventoatualizado",
+      descricao:"descriçãoatualizado",
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************DELETE************
+
+
+
+
+
+mutation {
+  excluirLogSistema(id : 8)
+  {   
+    message
+    success
+    
+  }
+}

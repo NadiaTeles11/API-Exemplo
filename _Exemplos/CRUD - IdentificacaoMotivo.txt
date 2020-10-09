@@ -1,0 +1,106 @@
+********GetAll*********
+
+query {
+  grupoIdentificacaoMotivo(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      interno
+      prestador
+      visitante
+      motivo    
+      tempoPermanencia
+      tempoPrimeiroAcesso
+      
+      
+    }     
+      
+  }
+}
+
+********Insert*********
+
+mutation {
+  grupoIdentificacao_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    identificacaoMotivo: {     
+      interno:true,
+      prestador:false,
+      visitante:true,
+      motivo:"xx1sxds",    
+      tempoPermanencia:7200,
+      tempoPrimeiroAcesso:1440
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  grupoIdentificacao_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    identificacaoMotivo: {
+      id:3,
+      interno:true,
+      prestador:false,
+      visitante:true,
+      motivo:"teste xx",    
+      tempoPermanencia:7200,
+      tempoPrimeiroAcesso:1440
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************DELETE************
+
+mutation {
+  grupoIdentificacao_Excluir(id : 20
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

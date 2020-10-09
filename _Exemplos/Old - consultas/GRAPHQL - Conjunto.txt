@@ -1,0 +1,198 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os conjuntos
+
+query {
+    conjunto{
+    nodes{
+      id
+      nome
+      observacao
+      siteId
+    }     
+  }
+}
+
+Obtem todos os conjuntos ordenando pelo nome ascendente
+
+query {
+  conjunto  ( order_by: {nome: ASC} )   {
+    nodes{
+  	id
+        nome
+        observacao
+        siteId
+    }     
+  }
+}
+
+Obtem todos os conjuntos ordenando pelo nome descendente
+
+query{
+  conjunto(order_by:{nome:DESC}){
+    nodes{
+      id
+      nome
+      observacao
+      siteId
+    }
+  }
+}
+
+Obtem o conjunto pelo ID
+
+query {
+  conjunto   ( where: {id: 1} )  {
+    nodes{
+      id      
+      nome      
+      observacao
+      siteId
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+  conjunto   ( where: { nome_contains: "1"} )  {
+    nodes{
+      id      
+      nome      
+      observacao
+      siteId
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  conjunto   ( where: { nome_contains: "CJ"} order_by: {nome: ASC} )  {
+    nodes{
+      id      
+      nome      
+      observacao
+      siteId
+    }     
+  }
+}
+
+
+
+
+Filtrando por duas condições
+
+query {
+  conjunto  (where: { OR: [{ nome_contains: "CJ" }, {observacao_contains: "C" }]} )   {
+    nodes{
+      id      
+      nome      
+      observacao
+      siteId
+    }     
+  }
+}
+
+Total de conjuntos cadastrados
+
+query {
+  conjunto  (first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  conjunto  (first: 3)     {
+    nodes{
+      id      
+      nome      
+      observacao
+      siteId
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  conjunto(first: 3 order_by: {nome: ASC}) {
+    nodes {
+       id      
+      nome      
+      observacao
+      siteId
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  conjunto(order_by: {nome: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+      nome      
+      observacao
+      siteId
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createConjunto(inputConjunto: {   
+    nome: "conjunto create",
+    observacao: "Testes",
+    siteId: 1
+    
+  })
+  {
+    id
+    nome
+    observacao
+    siteId
+  }
+}
+
+
+mutation {
+  updateConjunto(inputConjunto: { 
+    id: 8,
+    nome: "conjunto update",
+    observacao: "update",
+    siteId: 2
+  })
+  {
+    id
+    nome
+    observacao
+    siteId
+  }
+}
+
+mutation {
+  deleteConjunto(id: 9) 
+}
+
+
+
+
+

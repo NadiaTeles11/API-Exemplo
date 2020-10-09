@@ -1,0 +1,350 @@
+********GetAll*********
+
+query {
+ controleIdentificacao(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      agendamentoId
+      identificacaoDataHora
+      identificacaoLocalTipo
+      identificacaoLocalNome
+      identificacaoOperadorId
+      identificacaoOperadorNome
+      siteId
+      siteNome
+      pessoa
+      pessoaTipo
+      pessoaId
+      pessoaNome
+      pessoaDocTipo
+      pessoaDocNumero
+      pessoaGrupo
+      pessoaNascimento
+      pessoaPeso
+      pessoaTelefoneFixo
+      pessoaTelefoneMovel
+      pessoaEmail
+      pessoaEntidade
+      pessoaEmpresaId
+      pessoaEmpresaNome
+      pessoaComplemento1
+      pessoaComplemento2
+      pessoaComplemento3
+      pessoaComplemento4
+      veiculo
+      veiculoId
+      veiculoTipo
+      veiculoPlaca
+      veiculoModelo
+      veiculoCor
+      veiculoGrupo
+      veiculoPeso
+      veiculoComplemento1
+      veiculoComplemento2
+      veiculoComplemento3
+      veiculoComplemento4
+      visitadoId
+      visitadoNome
+      visitadoUnidadeId
+      visitadoUnidadeNome
+      visitadoLocalizacao
+      visitadoTelefone
+      visitadoCentroCusto
+      autorizanteId
+      autorizanteNome
+      estacionamentoId
+      estacionamentoNome
+      garagemTipo
+      garagemVaga
+      areaReservadaId
+      areaReservadaNome
+      motivo
+      identificadorTipo
+      identificador
+      acessoCodigo
+      acessoSenha
+      acessoValidadeInicial
+      acessoValidadeFinal
+      acessoNivel1
+      acessoNivel2
+      acessoNivel3
+      acessoNivel4
+      acessoNivel5
+      acessoNivel6
+      acessoNivel7
+      acessoNivel8
+      acessoNivel9
+      acessoNivel10
+      ingressoAtribuido
+      ingressoCorrente
+      creditoAtribuido
+      creditoCorrente
+      acessoSaida
+      acessoBiometria
+      integracao
+      observacao
+      suspensoDataHora
+      suspensoOperadorId
+      suspensoOperadorNome
+      suspensoObservacao
+      visitaCorrente
+      visitaDataHora
+
+ 			
+      
+      
+    }     
+  }
+}
+
+********Insert*********
+
+mutation {
+  controleIdentificacao_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    identificacao: {  
+   				agendamentoId:2,
+          identificacaoDataHora:"2020-03-03",
+          identificacaoLocalTipo:1,
+          identificacaoLocalNome:"ident create",
+          identificacaoOperadorId:2,
+          identificacaoOperadorNome:"op crefdsate",
+          siteId:2,
+          siteNome:"site crefdate",
+          pessoa:2,
+          pessoaTipo:2,
+          pessoaId:1,
+          pessoaNome:"ian",
+          pessoaDocTipo:"CPs",
+          pessoaDocNumero:"462135",
+          pessoaGrupo:"pessoa gcreate",
+          pessoaNascimento:"2020-06-25",
+          pessoaPeso:5,
+          pessoaTelefoneFixo:"564894981",
+          pessoaTelefoneMovel:"89198458",
+          pessoaEmail:"email@tste.com.br",
+          pessoaEntidade:"enti create",
+          pessoaEmpresaId:2,
+          pessoaEmpresaNome:"empresa create",
+          pessoaComplemento1:"123",
+          pessoaComplemento2:"456",
+          pessoaComplemento3:"789",
+          pessoaComplemento4:"0147",
+          veiculo:1,
+          veiculoId:5,
+          veiculoTipo:1,
+          veiculoPlaca:"dzb9874",
+          veiculoModelo:"modelo create",
+          veiculoCor:"ROSA",
+          veiculoGrupo:"grupo create",
+          veiculoPeso:1,
+          veiculoComplemento1:"ABC",
+          veiculoComplemento2:"def",
+          veiculoComplemento3:"ghi",
+          veiculoComplemento4:"jkl",
+          visitadoId:3,
+          visitadoNome:"visitado create",
+          visitadoUnidadeId:5,
+          visitadoUnidadeNome:"fads",
+          visitadoLocalizacao:"afsd",
+          visitadoTelefone:"123465asfd",
+          visitadoCentroCusto:"asfd3aada4",
+          autorizanteId:1,
+          autorizanteNome:"asf1dhj32",
+          estacionamentoId:4,
+          estacionamentoNome:"hd4689hdhjh",
+          garagemTipo:2,
+          garagemVaga:"48ab",
+          areaReservadaId:5,
+          areaReservadaNome:"asf465a",
+          motivo:"moti create",
+          identificadorTipo:1,
+          identificador:"f2as5d7f8g",
+          acessoCodigo:12,
+          acessoSenha:"7kl9j79jkl8",
+          acessoValidadeInicial:"2020-02-02",
+          acessoValidadeFinal:"2020-03-03",
+          acessoNivel1:1,
+          acessoNivel2:2,
+          acessoNivel3:3,
+          acessoNivel4:4,
+          acessoNivel5:5,
+          acessoNivel6:6,
+          acessoNivel7:7,
+          acessoNivel8:8,
+          acessoNivel9:9,
+          acessoNivel10:11,
+          ingressoAtribuido:1,
+          ingressoCorrente:2,
+          creditoAtribuido:1,
+          creditoCorrente:1,
+          acessoSaida:false,
+          acessoBiometria:true,
+          integracao:"inte create",
+          observacao:"ob create",
+          suspensoDataHora:"2020-08-08",
+          suspensoOperadorId:1,
+          suspensoOperadorNome:"sus os create",
+          suspensoObservacao:"ob cret",
+          visitaCorrente:true,
+          visitaDataHora:"2020-07-07"
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  controleIdentificacao_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    identificacao: {  
+      		id:3,
+   				agendamentoId:2,
+          identificacaoDataHora:"2020-03-03",
+          identificacaoLocalTipo:1,
+          identificacaoLocalNome:"ident create",
+          identificacaoOperadorId:2,
+          identificacaoOperadorNome:"op crefdsate",
+          siteId:2,
+          siteNome:"site crefdate",
+          pessoa:2,
+          pessoaTipo:2,
+          pessoaId:1,
+          pessoaNome:"nome crseate",
+          pessoaDocTipo:"CPFa",
+          pessoaDocNumero:"123456a",
+          pessoaGrupo:"pessoa gcreate",
+          pessoaNascimento:"2020-06-25",
+          pessoaPeso:5,
+          pessoaTelefoneFixo:"564894981",
+          pessoaTelefoneMovel:"89198458",
+          pessoaEmail:"email@tste.com.br",
+          pessoaEntidade:"enti create",
+          pessoaEmpresaId:2,
+          pessoaEmpresaNome:"empresa create",
+          pessoaComplemento1:"123",
+          pessoaComplemento2:"456",
+          pessoaComplemento3:"789",
+          pessoaComplemento4:"0147",
+          veiculo:1,
+          veiculoId:5,
+          veiculoTipo:1,
+          veiculoPlaca:"dzb9874",
+          veiculoModelo:"modelo create",
+          veiculoCor:"ROSA",
+          veiculoGrupo:"grupo create",
+          veiculoPeso:1,
+          veiculoComplemento1:"ABC",
+          veiculoComplemento2:"def",
+          veiculoComplemento3:"ghi",
+          veiculoComplemento4:"jkl",
+          visitadoId:3,
+          visitadoNome:"visitado create",
+          visitadoUnidadeId:5,
+          visitadoUnidadeNome:"fads",
+          visitadoLocalizacao:"afsd",
+          visitadoTelefone:"123465asfd",
+          visitadoCentroCusto:"asfd3aada4",
+          autorizanteId:1,
+          autorizanteNome:"asf1dhj32",
+          estacionamentoId:4,
+          estacionamentoNome:"hd4689hdhjh",
+          garagemTipo:2,
+          garagemVaga:"3ab",
+          areaReservadaId:5,
+          areaReservadaNome:"asf465a",
+          motivo:"moti create",
+          identificadorTipo:1,
+          identificador:"f2as5d7f8g",
+          acessoCodigo:12,
+          acessoSenha:"7kl9j79jkl8",
+          acessoValidadeInicial:"2020-02-02",
+          acessoValidadeFinal:"2020-03-03",
+          acessoNivel1:1,
+          acessoNivel2:2,
+          acessoNivel3:3,
+          acessoNivel4:4,
+          acessoNivel5:5,
+          acessoNivel6:6,
+          acessoNivel7:7,
+          acessoNivel8:8,
+          acessoNivel9:9,
+          acessoNivel10:11,
+          ingressoAtribuido:1,
+          ingressoCorrente:2,
+          creditoAtribuido:1,
+          creditoCorrente:1,
+          acessoSaida:false,
+          acessoBiometria:true,
+          integracao:"inte create",
+          observacao:"ob create",
+          suspensoDataHora:"2020-08-08",
+          suspensoOperadorId:1,
+          suspensoOperadorNome:"sus os create",
+          suspensoObservacao:"ob cret",
+          visitaCorrente:true,
+          visitaDataHora:"2020-07-07"
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************DELETE************
+
+
+
+mutation {
+  controleIdentificacao_Excluir(id : 3
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>d9a78826-720b-466c-8540-f28afb06f5d0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NexcodeControls.Data\NC.Data.csproj" />
+    <ProjectReference Include="..\NexcodeControls.Domain\NC.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DependencyInjection\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="GraphQL" Version="3.0.0" />
+    <PackageReference Include="HotChocolate" Version="10.5.2" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="10.5.2" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="10.5.2" />
+    <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.2" />
+    <PackageReference Include="HotChocolate.Types" Version="10.5.2" />
+    <PackageReference Include="HotChocolate.Types.Filters" Version="10.5.2" />
+    <PackageReference Include="HotChocolate.Types.Sorting" Version="10.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\Nadia Teles\.nuget\packages\autofac\4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

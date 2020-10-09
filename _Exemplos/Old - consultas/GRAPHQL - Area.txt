@@ -1,0 +1,200 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos as areas
+
+query{
+  area{
+    nodes{
+      id
+      localizacao
+      nome
+      observacao
+      tipo
+      siteId
+    }
+  }
+}
+
+
+Obtem todas as areas ordenando pelo nome ascendente
+
+query{
+  area(order_by: {nome: ASC}){
+    nodes{
+      id
+      localizacao
+      nome
+      observacao
+      tipo
+      siteId
+    }
+  }
+}
+
+Obtem a area pelo ID
+
+query{
+  area(where: {id: 1}){
+    nodes{
+      id
+      localizacao
+      nome
+      observacao
+      siteId
+      tipo
+    }
+  }
+}
+
+
+Obtem todos as areas ordenando pelo nome descendente
+
+query{
+  area(order_by: {nome: DESC}){
+    nodes{
+      id
+      localizacao
+      nome
+      observacao
+      tipo
+      siteId
+    }
+  }
+}
+
+Filtrando por nome da area que contenha os caracteres "EMER" como parte do nome e ordenando por nome ascendente
+
+query{
+  area(where: {nome_contains: "EMER"}){
+    nodes{
+      id
+      localizacao
+      nome
+      observacao
+      siteId
+      tipo
+    }
+  }
+}
+
+
+
+Filtrando por nome da area que contenha as seguintes partes no nome
+
+query{
+  area(where: {OR : [{nome_contains:"EMER"}, {nome_contains: "ESTA"}]}){
+    nodes{
+       id
+       localizacao
+       nome
+       observacao
+       tipo
+       siteId
+    }
+  }
+}
+
+Total de sites cadastrados
+
+query {
+  area  (first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  area(first: 3 order_by: {nome: ASC}) {
+    nodes {
+        id      
+        localizacao
+        nome
+        observacao
+        siteId
+        tipo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+
+
+Paginação proxima pagina
+
+query {
+  area(order_by: {nome: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+        localizacao
+        nome
+        observacao
+        siteId
+        tipo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createArea(inputArea: {   
+    siteId: 1,
+    nome:  "area create",
+    tipo: 0,
+    localizacao: "localizao create",
+    observacao: "observacao create"
+  
+  })
+  {
+    id
+    siteId
+    nome
+    tipo
+    localizacao
+    observacao
+  }
+}
+
+
+mutation {
+  updateArea(inputArea: { 
+    id:39,
+    siteId: 1,
+    nome:  "area update",
+    tipo: 1,
+    localizacao: "localizao update",
+    observacao: "observacao update"
+  
+  })
+  {
+    id
+    siteId
+    nome
+    tipo
+    localizacao
+    observacao
+  }
+}
+
+mutation {
+  deleteArea(id: 329) 
+}
+
+
+
+
+
+

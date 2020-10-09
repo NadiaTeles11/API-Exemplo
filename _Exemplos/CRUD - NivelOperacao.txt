@@ -1,0 +1,350 @@
+********GetAll*********
+
+query {
+  operadorNivelOperacao(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+     id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+Obtem todos os dados
+
+query {
+  operadorNivelOperacao(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+Obtem todos os dados ordenandos pelo nome descendente
+
+query {
+  operadorNivelOperacao(order_by: {nome: DESC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+Obtem pelo ID
+
+query {
+  operadorNivelOperacao(where: {id: 2},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+
+
+Filtrar por nome
+
+query {
+  operadorNivelOperacao(where: { nome_contains: "TE"},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+Filtrando por campo e order BY
+
+query {
+  operadorNivelOperacao(where: { nome_contains: "S"} order_by: {id: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+
+
+
+Filtrando por duas condições
+
+query {
+  operadorNivelOperacao(where: { OR: [{ nome_contains: "A" }, {nome_contains: "C" }]},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+
+Total de centros cadastrados
+
+query {
+  operadorNivelOperacao(first:1,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+      
+  }
+}
+
+
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  operadorNivelOperacao(first: 3,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+    }     
+  }
+}
+
+
+Paginação com cursor 
+
+query {
+  operadorNivelOperacao(first: 3 order_by: {nome: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  operadorNivelOperacao(order_by: {nome: ASC} first: 3, after: "Mg==",
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      privilegios
+      observacao
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+********Insert*********
+
+mutation {
+  operadorNivelOperacao_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    nivelOperacao: {     
+      siteId:1,
+      nome:"nao",
+      privilegios:"nenhum",
+      observacao:""
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  operadorNivelOperacao_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    nivelOperacao: {    
+      id:1,
+      siteId:1,
+      nome:"nao123",
+      privilegios:"nenhum",
+      observacao:"aaaaaa"
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+************DELETE************
+
+
+mutation {
+  operadorNivelOperacao_Excluir(id : 13 sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

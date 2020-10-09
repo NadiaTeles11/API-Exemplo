@@ -1,0 +1,170 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos as entidade grupo
+
+query {
+    entidadeGrupo{
+    nodes{
+      id
+    	entidadeGrupo
+    }     
+  }
+}
+
+Obtem todos as entidade grupo ordenando pelo nome ascendente
+
+query{
+  entidadeGrupo(order_by:{entidadeGrupo:ASC}){
+    nodes{
+      id
+      entidadeGrupo
+    }
+  }
+}
+
+Obtem todos as entidade grupo ordenando pelo nome descendente
+
+query {
+  entidadeGrupo( order_by: {entidadeGrupo: DESC)   {
+    nodes{
+  			id
+        entidadeGrupo
+    }     
+  }
+}
+
+Obtem a entidade pelo ID
+
+query {
+  entidadeGrupo(where: {id: 15} )  {
+    nodes{
+      id      
+      entidadeGrupo
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+  entidadeGrupo(where: { entidadeGrupo_contains: "X"} )  {
+    nodes{
+      id      
+      entidadeGrupo
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  entidadeGrupo   ( where: { entidadeGrupo_contains: "X"} order_by: {id: DESC} )  {
+    nodes{
+      id      
+      entidadeGrupo
+    }     
+  }
+}
+
+
+
+
+Filtrando por duas condições
+
+query {
+  entidadeGrupo  (where: { OR: [{entidadeGrupo_contains : "X" }, {entidadeGrupo_contains: "Z" }]} )   {
+    nodes{
+      id      
+      entidadeGrupo
+    }     
+  }
+}
+
+Total de entidades cadastradas
+
+query {
+  entidadeGrupo  (first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  entidadeGrupo (first: 3 order_by:{id: DESC})     {
+    nodes{
+      id      
+      entidadeGrupo
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  entidadeGrupo(first: 3 order_by: {id: ASC}) {
+    nodes {
+       id      
+      entidadeGrupo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  entidadeGrupo(order_by: {entidadeGrupo: DESC} first: 2, after: "Mg==") {
+    nodes {
+       id      
+       entidadeGrupo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createEntidadeGrupo(inputEntidadeGrupo: {   
+    entidadeGrupo: "entidade create"
+    
+  })
+  {
+    id
+    entidadeGrupo
+  }
+}
+
+mutation {
+  updateEntidadeGrupo(inputEntidadeGrupo: { 
+    id: 16,
+    entidadeGrupo:"entidade 1"
+  })
+  {
+    id
+    entidadeGrupo
+  }
+}
+
+mutation {
+  deleteEntidadeGrupo(id: 166) 
+}
+
+
+
+
+
+

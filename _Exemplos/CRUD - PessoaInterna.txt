@@ -1,0 +1,275 @@
+********GetAll*********
+
+query {
+ usuarioPessoaInterna(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      imagem
+      nome
+      cognome
+      grupo
+      telefoneFixo
+      telefoneMovel
+      email
+      observacao
+      pessoaDocTipo
+      documentoNumero
+      habilitacaoRegistro
+      habilitacaoCategoria
+      habilitacaoValidade
+      nascimento
+      cargo
+      unidadeId
+      localizacao
+      empresaId
+      supervisorId
+      centroCusto
+      complemento1
+      complemento2
+      complemento3
+      complemento4
+      enderecoLogradouro
+      enderecoNumero
+      enderecoComplemento
+      enderecoBairro
+      enderecoCep
+      enderecoCidade
+      enderecoEstado
+      enderecoPais
+      identificador
+      identificadorInicio
+      identificadorFim
+      integracaoInicio
+      integracaoFim
+      segurancaInicio
+      segurancaFim
+      exameMedicoInicio
+      exameMedicoFim
+      feriasInicio
+      feriasFim
+      afastamentoInicio
+      afastamentoFim
+      recebeVisita
+      autorizaVisita
+      acessoCartao
+      acessoSenha
+      acessoCredito
+      ignorarBiometria
+      ignorarDirecao
+      ignorarTemporizacao
+      liberarSaidaExpirada
+      acessoForaHorario
+      cadastroData
+      cadastroOrigem
+      presente
+      abordagem
+      status
+      
+      
+    }     
+  }
+}
+
+********Insert*********
+
+mutation {
+  usuarioPessoaInterna_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    pessoainterna: {  
+    imagem:123,
+    nome :"nssd3e",
+    cognome :"cognome",
+    grupo :"grupo",
+    telefoneFixo :"1123465",
+    telefoneMovel :"119984",
+    email :"email@mass.com.br",
+    observacao :"obser",
+    pessoaDocTipo :"rbxa",
+    documentoNumero :"123457",
+    habilitacaoRegistro :"123465",
+    habilitacaoCategoria :"11",
+    habilitacaoValidade :"2020-10-10",
+    nascimento :"2005-05-05",
+    cargo :"cargo",
+    unidadeId :2,
+    localizacao :"localias",
+    empresaId :1,
+    supervisorId :2,
+    centroCusto :"cenas",
+    complemento1 :"asdf",
+    complemento2 :"afsdsad",
+    complemento3 :"fsaddsa",
+    complemento4 :"afdssadf",
+    enderecoLogradouro :"adfsad",
+    enderecoNumero :"assf",
+    enderecoComplemento :"dfadsfas",
+    enderecoBairro :"adfasd",
+    enderecoCep :"afd",
+    enderecoCidade :"adfasdf",
+    enderecoEstado :"adfasf",
+    enderecoPais :"dasdfasd",
+    identificador :"sfad",
+    identificadorInicio :"2020-05-05",
+    identificadorFim :"2020-05-05",
+    integracaoInicio :"2020-05-05",
+    integracaoFim :"2020-05-05",
+    segurancaInicio :"2020-05-05",
+    segurancaFim :"2020-05-05",
+    exameMedicoInicio :"2020-05-05",
+    exameMedicoFim :"2020-05-05",
+    feriasInicio :"2020-05-05",
+    feriasFim :"2020-05-05",
+    afastamentoInicio :"2020-05-05",
+    afastamentoFim :"2020-05-05",
+    recebeVisita :false,
+    autorizaVisita :true,
+    acessoCartao :"aafa",
+    acessoSenha :"adss",
+    acessoCredito :2,
+    ignorarBiometria :true,
+    ignorarDirecao :false,
+    ignorarTemporizacao :true,
+    liberarSaidaExpirada :false,
+    acessoForaHorario :1,
+    cadastroData :"2019-05-05",
+    cadastroOrigem :2,
+    presente:true,
+    abordagem :2,
+    status :false
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  usuarioPessoaInterna_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    pessoainterna: {  
+      id:11,
+    imagem:123,
+    nome :"nssd3e",
+    cognome :"cognome",
+    grupo :"grupo",
+    telefoneFixo :"1123465",
+    telefoneMovel :"119984",
+    email :"email@mass.com.br",
+    observacao :"obser",
+    pessoaDocTipo :"rbxa",
+    documentoNumero :"123457",
+    habilitacaoRegistro :"123465",
+    habilitacaoCategoria :"11",
+    habilitacaoValidade :"2020-10-10",
+    nascimento :"2005-05-05",
+    cargo :"cargo",
+    unidadeId :2,
+    localizacao :"localias",
+    empresaId :1,
+    supervisorId :2,
+    centroCusto :"cenas",
+    complemento1 :"asdf",
+    complemento2 :"afsdsad",
+    complemento3 :"fsaddsa",
+    complemento4 :"afdssadf",
+    enderecoLogradouro :"adfsad",
+    enderecoNumero :"assf",
+    enderecoComplemento :"dfadsfas",
+    enderecoBairro :"adfasd",
+    enderecoCep :"afd",
+    enderecoCidade :"adfasdf",
+    enderecoEstado :"adfasf",
+    enderecoPais :"dasdfasd",
+    identificador :"sfad",
+    identificadorInicio :"2020-05-05",
+    identificadorFim :"2020-05-05",
+    integracaoInicio :"2020-05-05",
+    integracaoFim :"2020-05-05",
+    segurancaInicio :"2020-05-05",
+    segurancaFim :"2020-05-05",
+    exameMedicoInicio :"2020-05-05",
+    exameMedicoFim :"2020-05-05",
+    feriasInicio :"2020-05-05",
+    feriasFim :"2020-05-05",
+    afastamentoInicio :"2020-05-05",
+    afastamentoFim :"2020-05-05",
+    recebeVisita :false,
+    autorizaVisita :true,
+    acessoCartao :"aafa",
+    acessoSenha :"adss",
+    acessoCredito :2,
+    ignorarBiometria :true,
+    ignorarDirecao :false,
+    ignorarTemporizacao :true,
+    liberarSaidaExpirada :false,
+    acessoForaHorario :1,
+    cadastroData :"2019-05-05",
+    cadastroOrigem :2,
+    presente:true,
+    abordagem :2,
+    status :false
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+
+************DELETE************
+
+
+
+mutation {
+  usuarioPessoaInterna_Excluir(id : 11
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+

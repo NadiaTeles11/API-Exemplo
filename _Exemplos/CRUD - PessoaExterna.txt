@@ -1,0 +1,219 @@
+********GetAll*********
+
+query {
+ usuarioPessoaExterna(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      imagem
+      nome
+      grupo,
+      telefoneFixo
+      telefoneMovel
+      email
+      observacao
+      pessoaDocTipo
+      documentoNumero
+      nascimento
+      empresaId
+      empresaNome
+      complemento1
+      complemento2
+      complemento3
+      complemento4
+      enderecoLogradouro
+      enderecoNumero
+      enderecoComplemento
+      enderecoBairro
+      enderecoCep
+      enderecoCidade
+      enderecoEstado
+      enderecoPais
+      contratacaoInicio
+      integracaoInicio
+      contratacaoFim
+      integracaoFim
+      segurancaInicio
+      segurancaFim
+      exameMedicoInicio
+      exameMedicoFim
+      ignorarBiometria
+      ultimaVisitaDataHora
+      ultimoVisitado
+      ultimoMotivo
+      exPessoaInterna
+      dataCadastro
+      origemCadastro
+      presente
+      abordagem
+      status
+      
+      
+    }     
+  }
+}
+
+********Insert*********
+
+mutation {
+  usuarioPessoaExterna_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    pessoaexterna: {  
+    imagem:null,
+    nome :"luanmendes",
+    grupo :"cognome",
+    telefoneFixo :"1199123465",
+    telefoneMovel :"1194984",
+    email :"1234567",
+    observacao :"obser",
+    pessoaDocTipo :"xxxa",
+    documentoNumero :"12347",
+    nascimento :"2005-05-05",
+    empresaId :1,
+    empresaNome:"nexcode automação"
+    complemento1 :"asdf",
+    complemento2 :"afsdsad",
+    complemento3 :"fsaddsa",
+    complemento4 :"afdssadf",
+    enderecoLogradouro :"adfsad",
+    enderecoNumero :"asdf",
+    enderecoComplemento :"dfadsfas",
+    enderecoBairro :"adfasd",
+    enderecoCep :"afdd",
+    enderecoCidade :"adfasdf",
+    enderecoEstado :"adfasf",
+    enderecoPais :"dasdfasd",
+    contratacaoInicio :"2020-05-05",
+    integracaoInicio :"2020-05-05",
+    contratacaoFim :"2020-05-05",
+    integracaoFim :"2020-05-05",
+    segurancaInicio :"2020-05-05",
+    segurancaFim :"2020-05-05",
+    exameMedicoInicio :"2020-05-05",
+    exameMedicoFim :"2020-05-05",
+    ignorarBiometria :true,
+    ultimaVisitaDataHora :"2020-05-05",
+    ultimoVisitado :1,
+    ultimoMotivo :"2020-05-05",
+    exPessoaInterna :false,
+    dataCadastro :"2020-05-05",
+    origemCadastro :1,
+    presente:false,
+    abordagem :0,
+    status :true
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  usuarioPessoaExterna_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    pessoaexterna: {  
+    id:31,
+    imagem:null,
+    nome :"luanmendes",
+    grupo :"cognome",
+    telefoneFixo :"1199123465",
+    telefoneMovel :"1194984",
+    email :"luanfmendes@hotmail.com",
+    observacao :"obser",
+    pessoaDocTipo :"xxxa",
+    documentoNumero :"12347",
+    nascimento :"2005-05-05",
+    empresaId :1,
+    empresaNome:"nexcode automação"
+    complemento1 :"asdf",
+    complemento2 :"afsdsad",
+    complemento3 :"fsaddsa",
+    complemento4 :"afdssadf",
+    enderecoLogradouro :"adfsad",
+    enderecoNumero :"asdf",
+    enderecoComplemento :"dfadsfas",
+    enderecoBairro :"adfasd",
+    enderecoCep :"afdd",
+    enderecoCidade :"adfasdf",
+    enderecoEstado :"adfasf",
+    enderecoPais :"dasdfasd",
+    contratacaoInicio :"2020-05-05",
+    integracaoInicio :"2020-05-05",
+    contratacaoFim :"2020-05-05",
+    integracaoFim :"2020-05-05",
+    segurancaInicio :"2020-05-05",
+    segurancaFim :"2020-05-05",
+    exameMedicoInicio :"2020-05-05",
+    exameMedicoFim :"2020-05-05",
+    ignorarBiometria :true,
+    ultimaVisitaDataHora :"2020-05-05",
+    ultimoVisitado :1,
+    ultimoMotivo :"2020-05-05",
+    exPessoaInterna :false,
+    dataCadastro :"2020-05-05",
+    origemCadastro :1,
+    presente:false,
+    abordagem :0,
+    status :true
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+
+************DELETE************
+
+mutation {
+  usuarioPessoaExterna_Excluir(id : 31
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+

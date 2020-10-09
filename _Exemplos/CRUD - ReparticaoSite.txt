@@ -1,0 +1,381 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os sites
+
+********GetAll*********
+
+query {
+  reparticaoSite(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+      conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+  }
+}
+
+
+Obtem todos os sites ordenando pelo nome ascendente
+
+query {
+  reparticaoSite(order_by: {nome: ASC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+      conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+  }
+}
+
+Obtem todos os sites ordenando pelo nome descendente
+
+query {
+  reparticaoSite(order_by: {nome: DESC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+      conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+  }
+}
+
+Obtem o site pelo ID
+
+query {
+  reparticaoSite(where: {id: 10}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+      conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+  }
+}
+
+
+
+
+Filtrando por nome do site e o site contenha os caracteres "SP" como parte do nome e ordenando por nome ascendente
+
+query {
+  reparticaoSite(where: { nome_contains: "TESTE"} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+      conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+  }
+}
+
+
+Filtrando por nome do site e o site contenha os caracteres "SP" como parte do nome e ordenando por nome ascendente
+
+query {
+  reparticaoSite(where: { nome_contains: "TESTE"} order_by: {nome: ASC}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+
+Filtrando por nome do site e o site contenha os caracteres "SP" e "MG" como parte do nome e ordenando por nome ascendente
+
+query {
+  reparticaoSite(where: { OR: [{ nome_contains: "SP" }, {nome_contains: "MG" }]}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+    }     
+  }
+}
+
+
+Total de sites cadastrados
+
+query {
+  reparticaoSite(first: 1
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+query {
+  reparticaoSite(first: 3
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+	conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  reparticaoSite(order_by: {nome: ASC} first: 3 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+	conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+      pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  reparticaoSite(order_by: {nome: ASC} first: 3, after: "Mg=="
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id      
+      nome      
+      nivelAcessoRotativo
+      observacao
+	conjuntos {
+        id
+        siteId
+        nome
+        observacao
+      }
+    }     
+      pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATIONS
+
+********Insert*********
+
+
+mutation {
+  reparticaoSite_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    site: {     
+      nome:"nexcode XX",      
+      nivelAcessoRotativo:1,
+      observacao:""
+  })
+  {   
+    mensagem
+    messagemTipo
+    sucesso    
+  }
+}
+
+************Put***************
+
+mutation {
+  reparticaoSite_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    site: {     
+    id:138,
+      nome:"nexcode mtx",      
+      nivelAcessoRotativo:1,
+      observacao:""
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+  }
+}
+
+
+************DELETE************
+ 
+mutation {
+  reparticaoSite_Excluir(id : 1
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+  }
+}

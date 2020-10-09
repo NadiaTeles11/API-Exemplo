@@ -1,0 +1,215 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os conjuntos
+
+query {
+    pessoaGrupo{
+    nodes{
+      id
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }     
+  }
+}
+
+Obtem todos os pessoa grupo ordenando pelo nome ascendente
+
+query{
+  pessoaGrupo(order_by:{id:ASC}){
+    nodes{
+      id
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }
+  }
+}
+Obtem todos os pessoa grupo ordenando pelo nome descendente
+
+query{
+  pessoaGrupo(order_by:{id:DESC}){
+    nodes{
+      id
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }
+  }
+}
+
+Obtem a pessoa grupo pelo ID
+
+query{
+  pessoaGrupo(where:{id: 66}){
+    nodes{
+      id
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+	pessoaGrupo(where: { pessoaGrupo_contains: "1"} )  {
+    nodes{
+      id      
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  pessoaGrupo (where: { pessoaGrupo_contains: "1"} order_by: {id: ASC} )  {
+    nodes{
+      id      
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }     
+  }
+}
+
+
+
+
+Filtrando por duas condições
+
+query {
+  pessoaGrupo  (where: { AND: [{ pessoaGrupo_contains: "1" }, {pessoaVisitante: true }]} order_by: {id: DESC} )   {
+    nodes{
+      id      
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }     
+  }
+}
+
+Total de conjuntos cadastrados
+
+query {
+    pessoaGrupo(first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  pessoaGrupo  (first: 3)     {
+    nodes{
+      id      
+      pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  pessoaGrupo(first: 3 order_by: {pessoaGrupo: ASC}) {
+    nodes {
+       id      
+       pessoaGrupo
+       pessoaInterna
+       pessoaPrestador
+       pessoaVisitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  pessoaGrupo(order_by: {pessoaVisitante: DESC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+       pessoaGrupo
+      pessoaInterna
+      pessoaPrestador
+      pessoaVisitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createPessoaGrupo(inputPessoaGrupo: {   
+   	pessoaGrupo:"teste create",
+    pessoaInterna:true,
+    pessoaPrestador: false,
+    pessoaVisitante:true
+   
+    
+  })
+  {
+    id
+    pessoaGrupo
+    pessoaInterna
+    pessoaPrestador
+    pessoaVisitante
+  }
+}
+
+
+mutation {
+  updatePessoaGrupo(inputPessoaGrupo: {   
+    id:84,
+   	pessoaGrupo:"teste update",
+    pessoaInterna:true,
+    pessoaPrestador: false,
+    pessoaVisitante:false
+   
+    
+  })
+  {
+    id
+    pessoaGrupo
+    pessoaInterna
+    pessoaPrestador
+    pessoaVisitante
+  }
+}
+
+mutation {
+  deletePessoaGrupo(id: 85) 
+}
+
+
+
+
+
+

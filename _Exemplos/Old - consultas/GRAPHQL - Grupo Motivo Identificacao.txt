@@ -1,0 +1,240 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todas as identificações motivo
+
+query{
+  identificacaoMotivo{
+    nodes{
+      id
+      interno
+      motivo
+      prestador
+      tempoPermanencia
+      tempoPrimeiroAcesso
+      visitante
+    }
+  }
+}
+
+Obtem todas as identificação motivo ordenando de forma ascendente
+
+query {
+  identificacaoMotivo( order_by: {id: ASC} )   {
+    nodes{
+  	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+Obtem todas as identificação motivo ordenando de forma descendente
+
+query {
+  identificacaoMotivo( order_by: {id: DESC} )   {
+    nodes{
+  	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+Obtem a entidade pelo ID
+
+query {
+  identificacaoMotivo(where: {id: 5} )  {
+    nodes{
+     	  id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+  identificacaoMotivo(where: { motivo_contains: "E"} order_by:{id: ASC} )  {
+    nodes{
+     	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  identificacaoMotivo(where: { motivo_contains: "E"} order_by:{id: DESC} )  {
+    nodes{
+      	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+
+
+Filtrando por duas condições
+
+query {
+  identificacaoMotivo(where:{AND: [{motivo_contains : "E" }, {interno: false }]} )   {
+    nodes{
+      	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+Total de entidades cadastradas
+
+query {
+  identificacaoMotivo(first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  identificacaoMotivo(first: 3 order_by:{id: ASC})     {
+    nodes{
+     	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }     
+  }
+}
+
+
+Paginação com cursor 
+
+query {
+  identificacaoMotivo(first: 3 order_by: {id: ASC}) {
+    nodes {
+       	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  identificacaoMotivo(order_by: {id: ASC} first: 3, after: "Mg==") {
+    nodes {
+       	id
+        interno
+        motivo
+        prestador
+        tempoPermanencia
+        tempoPrimeiroAcesso
+        visitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createIdentificacaoMotivo(inputIdentificacaoMotivo: {   
+    interno: true,
+    motivo:"motivo create",
+    prestador:false,
+    tempoPermanencia:20,
+    tempoPrimeiroAcesso:100,
+    visitante:true
+    
+  })
+  {
+    id
+    interno
+    motivo
+    prestador
+    tempoPermanencia
+    tempoPrimeiroAcesso
+    visitante
+  }
+}
+
+mutation {
+  updateIdentificacaoMotivo(inputIdentificacaoMotivo: {
+    id:6,
+    interno: true,
+    motivo:"motivo update",
+    prestador:true,
+    tempoPermanencia:40,
+    tempoPrimeiroAcesso:120,
+    visitante:false
+    
+  })
+  {
+    id
+    interno
+    motivo
+    prestador
+    tempoPermanencia
+    tempoPrimeiroAcesso
+    visitante
+  }
+}
+
+mutation {
+  deleteIdentificacaoMotivo(id: 6) 
+}
+
+
+
+
+

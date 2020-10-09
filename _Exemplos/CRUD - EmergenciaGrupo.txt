@@ -1,0 +1,279 @@
+********GetAll*********
+
+
+query {
+  grupoEmergencia  ( order_by: {emergenciaGrupo: ASC},
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+  	{
+    nodes{
+  	id
+    emergenciaGrupo
+    }     
+  }
+}
+
+Obtem todas as emergências ordenando pelo nome ascendente
+
+query {
+  grupoEmergencia  ( order_by: {emergenciaGrupo: ASC},
+    sessao:{
+        token : "gfgfgfhgfgfhg",
+        softwareLicenca : "NC1000",
+        solucaoEspecifica : "MARKET-PLACE",
+        solucaoIntegrada : "1",
+        aplicativo : "NEXCON",
+        aplicativoVersao : "PLUS"
+    })
+  {
+    nodes{
+  	id
+    emergenciaGrupo
+    }     
+  }
+}
+
+Obtem todas as emergências ordenando pelo nome descendente
+
+query {
+  grupoEmergencia  ( order_by: {emergenciaGrupo: DESC},
+    sessao:{
+        token : "gfgfgfhgfgfhg",
+        softwareLicenca : "NC1000",
+        solucaoEspecifica : "MARKET-PLACE",
+        solucaoIntegrada : "1",
+        aplicativo : "NEXCON",
+        aplicativoVersao : "PLUS"
+    })
+  {
+    nodes{
+  	id
+    emergenciaGrupo
+    }     
+  }
+}
+
+Obtem a emergência pelo ID
+
+query {
+     grupoEmergencia( where: {id: 13},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })  
+  {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+     grupoEmergencia( where: { emergenciaGrupo_contains: "T"},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })  {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+  grupoEmergencia(where: { emergenciaGrupo_contains: "A"} order_by: {id: DESC},
+   sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })  {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+
+Filtrando por duas condições
+
+query {
+    grupoEmergencia(where: { OR: [{ emergenciaGrupo_contains: "T" }, {emergenciaGrupo_contains: "A" }]},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })   {
+    nodes{
+      id      
+      emergenciaGrupo
+    }     
+  }
+}
+
+Total de emergências cadastradas
+
+query {
+  emergenciaGrupo(first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  grupoEmergencia(first: 1, 
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })   {
+    totalCount
+  }
+}
+
+Paginação com cursor 
+
+query {
+  grupoEmergencia(first: 3 order_by: {id: DESC},
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+  {
+    nodes {
+       id      
+       emergenciaGrupo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  grupoEmergencia(order_by: {id: ASC} first: 1, after: "Mg==", 
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }) {
+    nodes {
+       id      
+       emergenciaGrupo
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+********Insert*********
+
+mutation {
+  grupoEmergencia_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    emergenciaGrupo: {     
+      emergenciaGrupo:"teste"
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  grupoEmergencia_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    emergenciaGrupo: {  
+      id:12,
+      emergenciaGrupo:"atassa"
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+************DELETE************
+
+mutation {
+  grupoEmergencia_Excluir(id : 12
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

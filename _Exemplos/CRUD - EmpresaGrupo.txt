@@ -1,0 +1,91 @@
+********GetAll*********
+
+query {
+ grupoEmpresa(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+   		empresaGrupo
+      
+    }     
+  }
+}
+
+********Insert*********
+
+mutation {
+  grupoEmpresa_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    empresaGrupo: {  
+   				empresaGrupo:"space x"
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  grupoEmpresa_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    empresaGrupo: {  
+      		id:34,
+   				empresaGrupo:"tesla"
+      		
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************DELETE************
+
+mutation {
+  grupoEmpresa_Excluir(id : 34
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

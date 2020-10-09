@@ -1,0 +1,277 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os operadores
+
+********GetAll*********
+
+query {
+  operador(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      operadorPessoaId
+      nivelOperacaoId
+      login
+      senha
+      interfaceDefinida
+      loginDataHora
+      logoutDataHora
+      cadastroData
+      status
+      
+    }     
+  }
+}
+
+Obtem todos os operadores ordenando pelo login ascendente
+
+query {
+  operador(order_by: {login: ASC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      operadorPessoaId
+      nivelOperacaoId
+      login
+      senha
+      interfaceDefinida
+      loginDataHora
+      logoutDataHora
+      cadastroData
+      status
+    }     
+  }
+}
+
+Obtem todos os operadores ordenando pelo login descendente
+
+query {
+  operador(order_by: {login: DESC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      operadorPessoaId
+      nivelOperacaoId
+      login
+      senha
+      interfaceDefinida
+      loginDataHora
+      logoutDataHora
+      cadastroData
+      status
+    }     
+  }
+}
+
+Obtem a area pelo ID
+
+query{
+  operador(where: {operadorPessoaId: 1}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      operadorPessoaId
+      nivelOperacaoId
+      login
+      senha
+      interfaceDefinida
+      loginDataHora
+      logoutDataHora
+      cadastroData
+      status
+    }
+  }
+}
+
+
+Filtrando por nome da area que contenha os caracteres
+
+query{
+  operador(where: {login_contains: "l"}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      operadorPessoaId
+      nivelOperacaoId
+      login
+      senha
+      interfaceDefinida
+      loginDataHora
+      logoutDataHora
+      cadastroData
+      status
+    }
+  }
+}
+
+Filtrando por condição e nome da area que contenha ao seguintes caracteres
+
+query{
+  operador(where: {AND : [{login_contains:"l"}, {senha_contains: "0"}]}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+       operadorPessoaId
+      nivelOperacaoId
+      login
+      senha
+      interfaceDefinida
+      loginDataHora
+      logoutDataHora
+      cadastroData
+      status
+    }
+  }
+}
+
+
+Total de areas cadastradas
+
+query {
+  operador(first: 1
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATIONS
+
+********Insert*********
+
+mutation {
+  operador_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    operador: {     
+      		operadorPessoaId:27,
+          nivelOperacaoId:2,
+          login: "NADIA1234",
+          senha: "123456789",
+          interfaceDefinida:2,
+          loginDataHora: "2020-05-05",
+          logoutDataHora:"2020-03-03",
+          status: true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+
+************Put***************
+
+
+mutation {
+  operador_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    operador: {     
+      		operadorPessoaId:27,
+          nivelOperacaoId:2,
+          login: "nad1324",
+          senha: "123456789",
+          interfaceDefinida:2,
+          loginDataHora: "2020-05-05",
+          logoutDataHora:"2020-03-03",
+          status: true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+
+
+
+
+************DELETE************
+
+mutation {
+  operador_Excluir(id : 27 sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

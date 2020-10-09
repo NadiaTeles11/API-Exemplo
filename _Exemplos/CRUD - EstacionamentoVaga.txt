@@ -1,0 +1,405 @@
+********GetAll*********
+
+query {
+ reparticaoEstacionamentoVaga(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      garagem
+      localizacao
+      tipoGaragem
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      ultimoAcesso
+      observacao
+   		
+      
+      
+      
+    }     
+  }
+}
+
+
+
+Obtem todos os dados ordenandos pelo nome descendente
+
+query {
+ reparticaoGaragem(order_by: {garagem: DESC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao
+      
+      
+    }     
+  }
+}
+
+Obtem pelo ID
+
+query {
+ reparticaoGaragem(where: {id: 2},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao
+      
+      
+    }     
+  }
+}
+
+
+
+Filtrar por nome
+
+query {
+ reparticaoGaragem(where: { garagem_contains: "n"},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao
+      
+      
+    }     
+  }
+}
+
+Filtrando por campo e order BY
+
+query {
+ reparticaoGaragem(where: { garagem_contains: "A"} order_by: {id: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao
+      
+      
+    }     
+  }
+}
+
+
+
+
+Filtrando por duas condições
+
+query {
+ reparticaoGaragem(where: { AND: [{ garagem_contains: "A" }, {garagem_contains: "C" }]},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao
+      
+      
+    }     
+  }
+}
+
+
+Total de centros cadastrados
+
+query {
+  reparticaoGaragem(first:1,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+      
+  }
+}
+
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+ reparticaoGaragem(first: 3,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao
+      
+      
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  reparticaoGaragem(first: 3 order_by: {garagem: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao  
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  reparticaoGaragem(order_by: {garagem: ASC} first: 3, after: "Mg==",
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      areaId
+      garagem
+      tipoGaragem
+      classeVinculadaId
+      unidadeVinculadaId
+      usuarioVinculadoId
+      usuarioAssociadoId
+      usuarioTipo
+      dataHoraAcesso
+      observacao  
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+
+********Insert*********
+
+mutation {
+  reparticaoEstacionamentoVaga_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    estacionamentoVaga: {     
+          garagem: "NEXBRASI4L",
+          localizacao: "",
+          tipoGaragem: 3,
+          unidadeVinculadaId: 4,
+          usuarioVinculadoId: 8,
+          usuarioAssociadoId: 8,
+          usuarioTipo: 1,
+          ultimoAcesso: "2020-03-03T03:00:00.000-03:00",
+          observacao: "GARAGEM SUBSOLO XX"
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+
+************Put***************
+
+
+mutation {
+  reparticaoEstacionamentoVaga_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    estacionamentoVaga: {     
+      		id:7,
+          garagem: "NEXILxx",
+          localizacao: "",
+          tipoGaragem: 3,
+          unidadeVinculadaId: 4,
+          usuarioVinculadoId: 8,
+          usuarioAssociadoId: 8,
+          usuarioTipo: 1,
+          ultimoAcesso: "2020-03-03T03:00:00.000-03:00",
+          observacao: "GARAGEM SUBSOLO XX"
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+
+************DELETE************
+
+mutation {
+  reparticaoEstacionamentoVaga_Excluir(id : 7
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

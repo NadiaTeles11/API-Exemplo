@@ -1,0 +1,172 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os centros de custos
+
+query{
+  centroCusto{
+    nodes{
+      id
+      centroCusto
+    }
+  }
+}
+
+Obtem todos os centros ordenando pelo centro ascendente
+
+query {
+  centroCusto  ( order_by: {centroCusto: ASC} )   {
+    nodes{
+      id      
+      centroCusto
+      
+    }     
+  }
+}
+
+Obtem todos os centros ordenando pelo nome descendente
+
+query {
+  centroCusto  ( order_by: {centroCusto: DESC} )   {
+    nodes{
+      id      
+      centroCusto
+      
+    }     
+  }
+}
+
+Obtem o centro pelo ID
+
+query {
+  centroCusto   ( where: {id: 13} )  {
+    nodes{
+      id      
+      centroCusto
+    }     
+  }
+}
+
+
+
+Filtrar por nome
+
+query {
+  centroCusto   ( where: { centroCusto_contains: "ADM"} )  {
+    nodes{
+      id      
+      centroCusto
+    }     
+  }
+}
+
+Filtrando por campo e order BY
+
+query {
+  centroCusto   ( where: { centroCusto_contains: "ADM"} order_by: {centroCusto: ASC} )  {
+    nodes{
+      id      
+      centroCusto
+    }     
+  }
+}
+
+
+
+
+Filtrando por nome do centro e o site contenha os caracteres "ADM" e "XPTO" como parte do nome e ordenando por nome ascendente
+
+query {
+  centroCusto  (where: { OR: [{ centroCusto_contains: "ADM" }, {centroCusto_contains: "XPTO" }]} )   {
+    nodes{
+      id      
+      centroCusto
+    }     
+  }
+}
+
+Total de centros cadastrados
+
+query {
+  centroCusto  (first: 1)   {
+    totalCount
+  }
+}
+
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  centroCusto  (first: 3)     {
+    nodes{
+      id      
+      centroCusto
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  centroCusto(first: 3 order_by: {centroCusto: ASC}) {
+    nodes {
+       id      
+      centroCusto
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  centroCusto(order_by: {centroCusto: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+      centroCusto
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createCentroCusto(inputCusto: {
+    centroCusto: "creaaate"
+  })
+  {
+    id
+    centroCusto
+  }
+}
+
+mutation {
+  updateCentroCusto(inputCusto: {
+    id: 1024,
+    centroCusto: ""
+  })
+  {
+    id
+    centroCusto
+  }
+}
+
+mutation {
+  deleteCentroCusto(id: 10555) 
+}
+
+
+
+
+

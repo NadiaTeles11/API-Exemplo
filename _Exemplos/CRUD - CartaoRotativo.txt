@@ -1,0 +1,193 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os cartoes rotativos
+
+********GetAll*********
+
+query {
+  concessaoCartaoRotativo(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      cartao
+      siteId
+      status
+    }     
+  }
+}
+
+Obtem todos os cartoes rotativos ordenando pelo cartão
+
+query {
+  concessaoCartaoRotativo(order_by: {cartao: ASC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      cartao
+      siteId
+      status
+    }     
+  }
+}
+
+Obtem todos os cartoes rotativos ordenando pelo nome descendente
+
+query {
+  concessaoCartaoRotativo(order_by: {cartao: DESC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      cartao
+      siteId
+      status
+    }     
+  }
+}
+
+Obtem os cartões rotativos pelo ID
+
+query {
+  concessaoCartaoRotativo(where: {id: 3} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      cartao
+      siteId
+      status
+    }     
+  }
+}
+
+
+Total de cartoes rotativos cadastrados
+
+query {
+  concessaoCartaoRotativo(first: 1
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+  }
+}
+
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATIONS
+
+********Insert*********
+
+mutation {
+  concessaoCartaoRotativo_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    cartaoRotativo: {  
+      cartao:123,
+      siteId:1,
+      status:true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso  
+    objeto  
+  }
+}
+
+
+************Put***************
+
+
+mutation {
+  concessaoCartaoRotativo_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    cartaoRotativo: {  
+      id:3,
+      cartao:15129,
+      siteId:1,
+      status:true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+
+
+
+
+************DELETE************
+
+mutation {
+  concessaoCartaoRotativo_Excluir(id : 3 sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

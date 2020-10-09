@@ -1,0 +1,463 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos as areas
+
+********GetAll*********
+
+query {
+  reparticaoArea(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      tipo
+      areaMaeId
+      localizacao
+      idadeMinima
+      idadeMaxima
+      volumePermitido
+      volumeAtual
+      controlarDirecao
+      controlarRota
+      controlarVisitasUnidade
+      temporizarAcesso
+      temporizacaoAcesso
+      validarIdentificador
+      validarContratacao
+      validarIntegracao
+      validarSeguranca
+      validarExameMedico
+      validarFerias
+      validarAfastamento
+      validarHabilitacao
+      validarLicenciamento
+      validarCredito
+      validarGaragem
+      recolherCartao
+      arquivarIdentificacao
+      revistarEntrada
+      revistarSaida
+      inativarIdentificador
+      observacao
+    }     
+      
+  }
+}
+
+Obtem todos as areas ordenando pelo nome ascendente
+
+query {
+  reparticaoArea(order_by: {nome: ASC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      tipo
+      areaMaeId
+      localizacao
+      idadeMinima
+      idadeMaxima
+      volumePermitido
+      volumeAtual
+      controlarDirecao
+      controlarRota
+      controlarVisitasUnidade
+      temporizarAcesso
+      temporizacaoAcesso
+      validarIdentificador
+      validarContratacao
+      validarIntegracao
+      validarSeguranca
+      validarExameMedico
+      validarFerias
+      validarAfastamento
+      validarHabilitacao
+      validarLicenciamento
+      validarCredito
+      validarGaragem
+      recolherCartao
+      arquivarIdentificacao
+      revistarEntrada
+      revistarSaida
+      inativarIdentificador
+      observacao
+    }     
+  }
+}
+
+Obtem todos as areas ordenando pelo nome descendente
+
+query {
+  reparticaoArea(order_by: {nome: DESC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      tipo
+      areaMaeId
+      localizacao
+      idadeMinima
+      idadeMaxima
+      volumePermitido
+      volumeAtual
+      controlarDirecao
+      controlarRota
+      controlarVisitasUnidade
+      temporizarAcesso
+      temporizacaoAcesso
+      validarIdentificador
+      validarContratacao
+      validarIntegracao
+      validarSeguranca
+      validarExameMedico
+      validarFerias
+      validarAfastamento
+      validarHabilitacao
+      validarLicenciamento
+      validarCredito
+      validarGaragem
+      recolherCartao
+      arquivarIdentificacao
+      revistarEntrada
+      revistarSaida
+      inativarIdentificador
+      observacao
+    }     
+  }
+}
+
+Obtem a area pelo ID
+
+query{
+  reparticaoArea(where: {id: 1}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      tipo
+      areaMaeId
+      localizacao
+      idadeMinima
+      idadeMaxima
+      volumePermitido
+      volumeAtual
+      controlarDirecao
+      controlarRota
+      controlarVisitasUnidade
+      temporizarAcesso
+      temporizacaoAcesso
+      validarIdentificador
+      validarContratacao
+      validarIntegracao
+      validarSeguranca
+      validarExameMedico
+      validarFerias
+      validarAfastamento
+      validarHabilitacao
+      validarLicenciamento
+      validarCredito
+      validarGaragem
+      recolherCartao
+      arquivarIdentificacao
+      revistarEntrada
+      revistarSaida
+      inativarIdentificador
+      observacao
+    }
+  }
+}
+
+
+Filtrando por nome da area que contenha os caracteres
+
+query{
+  reparticaoArea(where: {nome_contains: "EMER"}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      siteId
+      nome
+      tipo
+      areaMaeId
+      localizacao
+      idadeMinima
+      idadeMaxima
+      volumePermitido
+      volumeAtual
+      controlarDirecao
+      controlarRota
+      controlarVisitasUnidade
+      temporizarAcesso
+      temporizacaoAcesso
+      validarIdentificador
+      validarContratacao
+      validarIntegracao
+      validarSeguranca
+      validarExameMedico
+      validarFerias
+      validarAfastamento
+      validarHabilitacao
+      validarLicenciamento
+      validarCredito
+      validarGaragem
+      recolherCartao
+      arquivarIdentificacao
+      revistarEntrada
+      revistarSaida
+      inativarIdentificador
+      observacao
+    }
+  }
+}
+
+Filtrando por condição e nome da area que contenha ao seguintes caracteres
+
+query{
+  reparticaoArea(where: {OR : [{nome_contains:"EMER"}, {nome_contains: "ESTA"}]}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+       id
+      siteId
+      nome
+      tipo
+      areaMaeId
+      localizacao
+      idadeMinima
+      idadeMaxima
+      volumePermitido
+      volumeAtual
+      controlarDirecao
+      controlarRota
+      controlarVisitasUnidade
+      temporizarAcesso
+      temporizacaoAcesso
+      validarIdentificador
+      validarContratacao
+      validarIntegracao
+      validarSeguranca
+      validarExameMedico
+      validarFerias
+      validarAfastamento
+      validarHabilitacao
+      validarLicenciamento
+      validarCredito
+      validarGaragem
+      recolherCartao
+      arquivarIdentificacao
+      revistarEntrada
+      revistarSaida
+      inativarIdentificador
+      observacao
+    }
+  }
+}
+
+
+Total de areas cadastradas
+
+query {
+  reparticaoArea(first: 1
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+  }
+}
+
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATIONS
+
+********Insert*********
+
+mutation {
+  reparticaoArea_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    area: {     
+      siteId:1,
+      nome:"teste 11",
+      tipo:3
+      areaMaeId:1
+      localizacao:"",
+      idadeMinima:10,
+      idadeMaxima:18
+      volumePermitido:1,
+      volumeAtual:2,
+      controlarDirecao:false,
+      controlarRota:true,
+      controlarVisitasUnidade:true,
+      temporizarAcesso:true,
+      temporizacaoAcesso:"2020-02-02",
+      validarIdentificador:true,
+      validarContratacao:false,
+      validarIntegracao:true,
+      validarSeguranca:false,
+      validarExameMedico:true,
+      validarFerias:false,
+      validarAfastamento:false,
+      validarHabilitacao:false,
+      validarLicenciamento:false,
+      validarCredito:true,
+      validarGaragem:false,
+      recolherCartao:true,
+      arquivarIdentificacao:false,
+      revistarEntrada:true,
+      revistarSaida:true,
+      inativarIdentificador:true,
+      observacao:"obser"
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  reparticaoArea_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    area: {   
+      id:26,
+      siteId:1,
+      nome:"teste yu",
+      tipo:3
+      areaMaeId:1
+      localizacao:"",
+      idadeMinima:10,
+      idadeMaxima:18
+      volumePermitido:1,
+      volumeAtual:2,
+      controlarDirecao:false,
+      controlarRota:true,
+      controlarVisitasUnidade:true,
+      temporizarAcesso:true,
+      temporizacaoAcesso:"2020-02-02",
+      validarIdentificador:true,
+      validarContratacao:false,
+      validarIntegracao:true,
+      validarSeguranca:false,
+      validarExameMedico:true,
+      validarFerias:false,
+      validarAfastamento:false,
+      validarHabilitacao:false,
+      validarLicenciamento:false,
+      validarCredito:true,
+      validarGaragem:false,
+      recolherCartao:true,
+      arquivarIdentificacao:false,
+      revistarEntrada:true,
+      revistarSaida:true,
+      inativarIdentificador:true,
+      observacao:""
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+
+
+
+************DELETE************
+
+mutation {
+  reparticaoArea_Excluir(id : 26
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

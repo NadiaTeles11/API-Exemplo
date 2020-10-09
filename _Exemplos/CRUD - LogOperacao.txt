@@ -1,0 +1,70 @@
+********GetAll*********
+
+query{
+  logOperacao{
+    nodes{
+      id
+      dataHora
+      operadorPessoaId
+      operadorPessoaNome
+      operadorNivelOperacao
+      sistema
+      evento
+      descricao
+    }
+  }
+}
+
+********Insert*********
+
+mutation {
+  inserirLogOperacao(logOperacao: { 
+      dataHora:"2020-04-04",
+      operadorPessoaId:2,
+      operadorPessoaNome:"luanfmendes",
+      operadorNivelOperacao:"iniciante",
+      sistema:"sistema",
+      evento:"evento",
+      descricao:"descricao"
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************Put***************
+
+
+mutation {
+  alterarLogOperacao(logOperacao: { 
+    	id:15,
+      dataHora:"2020-10-04",
+      operadorPessoaId:3,
+      operadorPessoaNome:"alterado",
+      operadorNivelOperacao:"alterado",
+      sistema:"alterado",
+      evento:"alterado",
+      descricao:"alterado"
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************DELETE************
+
+
+
+
+mutation {
+  excluirLogOperacao(id : 14)
+  {   
+    message
+    success
+    
+  }
+}

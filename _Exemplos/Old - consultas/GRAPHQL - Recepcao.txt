@@ -1,0 +1,802 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todas as recepções
+
+query{
+  recepcao{
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+Obtem todas as recepções ordenando pelo nome ascendente
+
+query{
+  recepcao(order_by:{nome:ASC}){
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+Obtem todas as recepções ordenando pelo nome descendente
+
+query{
+  recepcao(order_by:{nome:DESC}){
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+Obtem o site pelo ID
+
+query{
+  recepcao(where:{id:4}){
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+
+
+Filtrando por nome
+
+query{
+  recepcao(where:{email_contains:"r"}){
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+Filtrando por campo e ordenando
+
+query{
+  recepcao(where:{email_contains:"r"} order_by:{id: ASC}){
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+
+
+
+Filtrando por duas condições
+
+query{
+  recepcao(where: { AND: [{ email_contains: "x" }, {nome_contains: "X" }]} ){
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+  }
+}
+
+Total de conjuntos cadastrados
+
+query {
+  recepcao(first: 1){
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  recepcao  (first: 3)     {
+    nodes{
+      id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  recepcao(first: 3 order_by: {nome: ASC}) {
+    nodes {
+       id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  recepcao(order_by: {nome: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createRecepcao(inputRecepcao: {   
+    	email:"email create",
+      	localizacao:"localização create",
+      	nome:"nome create",
+      	observacao:"observação create",
+      	telefone1:"123465789",
+      	telefone2:"1234567,"
+      	apresentarFelicitacao:true,
+      	apresentaUltimoVisitado:false,
+      	arquivarRegistro:true,
+      	ativarCaptura:false,
+      	campoComplemento:true,
+      	campoEmail:true,
+      	campoEntidade:false,
+      	campoMotivo:true,
+      	campoObservacao:false,
+      	campoTelefone:true,
+      	capturarImagem:2,
+      	controle:1,
+      	desativarCampoVeiculo:true,
+      	enviarEmailVisitante:false,
+      	identificador:1,
+      	identificarGaragem:true,
+      	identificarVeiculo:false,
+      	imprimirCracha:false,
+      	informarPresencaVisitado:true,
+      	iniciarCadastro:1,
+      	internoCrachaId:2,
+      	internoIngresso:3,
+      	internoMotivoId:4,
+      	internoTipoDocId:5,
+      	notificarMaior:1,
+      	notificarMenor:1,
+      	notificarVisitadoEmail:true,
+      	notificarVisitadoNexmove:false,
+      	notificarVisitadoSms:true,
+      	prestadorCrachaId:2,
+      	prestadorGrupoId:2,
+      	prestadorIngresso:2,
+      	prestadorMotivoId:2,
+      	prestadorTipoDocId:2,
+      	siteId:2,
+      	visitanteCrachaId:2,
+      	visitanteGrupoId:2,
+      	visitanteIngresso:2,
+      	visitanteMotivoId:2,
+      	visitanteTipoDocId:1
+    
+  })
+  {
+      id
+      email
+      localizacao
+      nome
+      observacao
+      telefone1
+      telefone2
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    
+  }
+}
+
+
+mutation {
+  updateRecepcao(inputRecepcao: { 
+    	id:5,
+    	email:"email create",
+      localizacao:"localização update",
+      nome:"nome update",
+      observacao:"observação update",
+      telefone1:"(11)XXXXXXXXX",
+      telefone2:"1234567,"
+      apresentarFelicitacao:true,
+      apresentaUltimoVisitado:false,
+      arquivarRegistro:true,
+      ativarCaptura:true,
+      campoComplemento:true,
+      campoEmail:true,
+      campoEntidade:true,
+      campoMotivo:true,
+      campoObservacao:true,
+      campoTelefone:true,
+      capturarImagem:6,
+      controle:6,
+      desativarCampoVeiculo:true,
+      enviarEmailVisitante:true,
+      identificador:6,
+      identificarGaragem:false,
+      identificarVeiculo:false,
+      imprimirCracha:false,
+      informarPresencaVisitado:true,
+      iniciarCadastro:6,
+      internoCrachaId:6,
+      internoIngresso:6,
+      internoMotivoId:6,
+      internoTipoDocId:6,
+      notificarMaior:6,
+      notificarMenor:6,
+      notificarVisitadoEmail:false,
+      notificarVisitadoNexmove:false,
+      notificarVisitadoSms:false,
+      prestadorCrachaId:6,
+      prestadorGrupoId:6,
+      prestadorIngresso:6,
+      prestadorMotivoId:6,
+      prestadorTipoDocId:6,
+      siteId:6,
+      visitanteCrachaId:6,
+      visitanteGrupoId:6,
+      visitanteIngresso:6,
+      visitanteMotivoId:6,
+      visitanteTipoDocId:6
+    
+  })
+  {
+    	id
+    	email
+      localizacao
+      nome
+      observacao
+      telefone1
+      telefone2
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+    
+  }
+}
+
+mutation {
+  deleteRecepcao(id: 5) 
+}
+
+
+
+

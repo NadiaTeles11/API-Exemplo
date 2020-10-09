@@ -1,0 +1,334 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos as unidades
+
+********GetAll*********
+
+query {
+  reparticaoUnidade(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+	id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }     
+  }
+}
+
+Obtem todos as unidades ordenando pelo nome ascendente
+
+
+query {
+  reparticaoUnidade(order_by: {nome: ASC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }     
+  }
+}
+
+Obtem todos as unidades ordenando pelo nome descendente
+
+
+query {
+  reparticaoUnidade(order_by: {nome: DESC} 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }     
+  }
+}
+
+Obtem a unidade pelo ID
+
+query{
+  reparticaoUnidade(where: {id: 6}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }
+  }
+}
+
+
+Filtrando por nome da unidade que contenha os caracteres
+
+query{
+  reparticaoUnidade(where: {nome_contains: "E"}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+       	id
+        conjuntoId
+        nome
+        gestorPessoaId
+        controleVisita
+        observacao
+    }
+  }
+}
+
+Filtrando por condição e nome da unidade que contenha ao seguintes caracteres
+
+query{
+  reparticaoUnidade(where: {OR : [{nome_contains:"E"}, {nome_contains: "X"}]}
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+       id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  reparticaoUnidade(first: 3
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  reparticaoUnidade(order_by: {nome: ASC} first: 3 
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }     
+      pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  reparticaoUnidade(order_by: {nome: ASC} first: 1, after: "Mg=="
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      conjuntoId
+      nome
+      gestorPessoaId
+      controleVisita
+      observacao
+    }     
+      pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+
+Total de unidades cadastradas
+
+query {
+  reparticaoUnidade(first: 1
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATIONS
+
+********Insert*********
+
+mutation {
+  reparticaoUnidade_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    unidade: {     
+      nome:"teste1",
+      observacao:"",
+      conjuntoId:1,
+      controleVisita:2,
+      gestorPessoaId:3
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+************Put***************
+
+mutation {
+  reparticaoUnidade_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    unidade: {     
+      id:1,
+      nome:"teste xx",
+      observacao:"",
+      conjuntoId:3,
+      controleVisita:4,
+      gestorPessoaId:5
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+
+
+
+
+************DELETE************
+
+mutation {
+  reparticaoUnidade_Excluir(id : 1 sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

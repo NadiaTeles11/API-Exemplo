@@ -1,0 +1,326 @@
+*****************QUERIES*************************
+
+********GetAll*********
+
+query {
+  grupoCentroCusto(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+Obtem todos os centros ordenando pelo centro ascendente
+
+query {
+  grupoCentroCusto(order_by: {centroCusto: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+Obtem todos os centros ordenando pelo nome descendente
+
+query {
+  grupoCentroCusto(order_by: {centroCusto: DESC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+Obtem o centro pelo ID
+
+query {
+  grupoCentroCusto(where: {id: 16},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+
+
+Filtrar por nome
+
+query {
+  grupoCentroCusto(where: { centroCusto_contains: "ADM"},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+Filtrando por campo e order BY
+
+query {
+  grupoCentroCusto(where: { centroCusto_contains: "ADM"} order_by: {centroCusto: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+
+
+
+Filtrando por nome do centro e o site contenha os caracteres "ADM" e "XPTO" como parte do nome e ordenando por nome ascendente
+
+query {
+  grupoCentroCusto(where: { OR: [{ centroCusto_contains: "ADM" }, {centroCusto_contains: "XPTO" }]},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+Total de centros cadastrados
+
+query {
+  grupoCentroCusto(first:1,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+      
+  }
+}
+
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  grupoCentroCusto(first: 3,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+      
+  }
+}
+
+Paginação com cursor 
+
+query {
+  grupoCentroCusto(first: 3 order_by: {centroCusto: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  grupoCentroCusto(order_by: {centroCusto: ASC} first: 3, after: "Mg==",
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      centroCusto   
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+
+*************MUTATION***************************
+
+********Insert*********
+
+mutation {
+  grupoCentroCusto_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    centroCusto: {     
+      centroCusto:"xsassa"
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  grupoCentroCusto_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    centroCusto: {     
+      id:2,
+      centroCusto:"financeiro"
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}
+
+************DELETE************
+
+mutation {
+  grupoCentroCusto_Excluir(id : 29
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

@@ -1,0 +1,353 @@
+********GetAll*********
+
+query {
+  grupoDocumento(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+       	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante
+      
+    }     
+      
+  }
+}
+
+Obtem todos os dados ordenandos pelo nome ascendente
+
+query {
+  grupoDocumento(order_by: {tipo: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante  
+      
+    }     
+      
+  }
+}
+
+Obtem todos os dados ordenandos pelo nome descendente
+
+query {
+  grupoDocumento(order_by: {tipo: DESC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante  
+      
+    }     
+      
+  }
+}
+
+Obtem pelo ID
+
+query {
+  grupoDocumento(where: {id: 1042},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante   
+      
+    }     
+      
+  }
+}
+
+
+
+Filtrar por nome
+
+query {
+  grupoDocumento(where: { tipo_contains: "C"},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante
+      
+    }     
+      
+  }
+}
+
+Filtrando por campo e order BY
+
+query {
+  grupoDocumento(where: { tipo_contains: "D"} order_by: {id: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante  
+      
+    }     
+      
+  }
+}
+
+
+
+Filtrando por duas condições
+
+query {
+  grupoDocumento(where: { OR: [{ tipo_contains: "I" }, {tipo_contains: "C" }]},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante 
+      
+    }     
+      
+  }
+}
+
+
+Total de centros cadastrados
+
+query {
+  grupoDocumento(first:1,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    totalCount
+      
+  }
+}
+
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+  grupoDocumento(first: 3,
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+     	  id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante
+      
+    }     
+      
+  }
+}
+
+Paginação com cursor 
+
+query {
+  grupoDocumento(first: 3 order_by: {tipo: ASC},
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      	id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante 
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+
+Paginação proxima pagina
+
+query {
+  grupoDocumento(order_by: {tipo: ASC} first: 3, after: "Mg==",
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+     		id
+        tipo
+        ordem
+        interno
+        prestador
+        visitante 
+      
+    }     
+    pageInfo {
+      hasNextPage
+      endCursor
+    } 
+      
+  }
+}
+
+********Insert*********
+
+mutation {
+  grupoDocumento_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    documentoGrupo: {     
+      tipo:"tipo",      
+      ordem:1,
+      interno:false,
+      prestador: false,
+      visitante: true
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso 
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  alterarDocumentoGrupo(documentoGrupo: {
+      id:1038,
+      tipo:"TIP",
+      ordem:3,
+      interno:false,
+      prestador:false,
+      visitante:false,
+      validacao:true
+  })
+  {   
+    message
+    success
+    
+  }
+}
+
+************DELETE************
+
+
+
+
+mutation {
+  excluirDocumentoGrupo(id : 1037)
+  {   
+    message
+    success
+    
+  }
+}

@@ -1,0 +1,231 @@
+********GetAll*********
+
+query {
+ reparticaoRecepcao(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    })
+    {
+    nodes{
+      id
+      nome
+      apresentarFelicitacao
+      apresentaUltimoVisitado
+      arquivarRegistro
+      ativarCaptura
+      campoComplemento
+      campoEmail
+      campoEntidade
+      campoMotivo
+      campoObservacao
+      campoTelefone
+      capturarImagem
+      controle
+      desativarCampoVeiculo
+      email
+      enviarEmailVisitante
+      identificador
+      identificarGaragem
+      identificarVeiculo
+      imprimirCracha
+      informarPresencaVisitado
+      iniciarCadastro
+      internoCrachaId
+      internoIngresso
+      internoMotivoId
+      internoTipoDocId
+      localizacao
+      nome
+      notificarMaior
+      notificarMenor
+      notificarVisitadoEmail
+      notificarVisitadoNexmove
+      notificarVisitadoSms
+      observacao
+      prestadorCrachaId
+      prestadorGrupoId
+      prestadorIngresso
+      prestadorMotivoId
+      prestadorTipoDocId
+      siteId
+      telefone1
+      telefone2
+      visitanteCrachaId
+      visitanteGrupoId
+      visitanteIngresso
+      visitanteMotivoId
+      visitanteTipoDocId
+
+ 			
+      
+      
+    }     
+  }
+}
+********Insert*********
+
+mutation {
+  reparticaoRecepcao_Inserir(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    recepcao: {  
+   					siteId:2,
+            nome:"nexcode",
+            telefone1:"123456789",
+            telefone2:"987654321",
+            email:"email@luan.com.br",
+            localizacao:"locali agora",
+            controle:2,
+            iniciarCadastro:3,
+            capturarImagem:2,
+            identificador:1,
+            notificarMenor:2,
+            notificarMaior:1,
+            campoComplemento:true,
+            campoEntidade:false,
+            campoEmail:true,
+            campoTelefone:false,
+            campoMotivo:true,
+            campoObservacao:false,
+            apresentarFelicitacao:true,
+            apresentaUltimoVisitado:false,
+            arquivarRegistro:true,
+            ativarCaptura:false,
+            imprimirCracha:true,
+            enviarEmailVisitante:false,
+            informarPresencaVisitado:true,
+            notificarVisitadoNexmove:false,
+            notificarVisitadoSms:true,
+            notificarVisitadoEmail:true,
+            identificarGaragem:true,
+            identificarVeiculo:true,   
+            internoTipoDocId:1,
+            internoMotivoId:2,
+            internoIngresso:1,
+            internoCrachaId:2,
+            prestadorTipoDocId:2,
+            prestadorGrupoId:1,
+            prestadorMotivoId:2,
+            desativarCampoVeiculo:false,
+            prestadorIngresso:0,
+            prestadorCrachaId:3,
+            visitanteTipoDocId:1,
+            visitanteGrupoId:2,
+            visitanteMotivoId:2,
+            visitanteIngresso:1,
+            visitanteCrachaId:2,
+            observacao:"obser agora"
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************Put***************
+
+
+mutation {
+  reparticaoRecepcao_Alterar(
+    sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }
+    recepcao: {  
+      			id:6,
+   					siteId:2,
+            nome:"teste",
+            telefone1:"123456789",
+            telefone2:"987654321",
+            email:"email@luan.com.br",
+            localizacao:"locali agora",
+            controle:2,
+            iniciarCadastro:0,
+            capturarImagem:0,
+            identificador:3,
+            notificarMenor:2,
+            notificarMaior:1,
+            campoComplemento:true,
+            campoEntidade:false,
+            campoEmail:true,
+            campoTelefone:false,
+            campoMotivo:true,
+            campoObservacao:false,
+            apresentarFelicitacao:true,
+            apresentaUltimoVisitado:false,
+            arquivarRegistro:true,
+            ativarCaptura:false,
+            imprimirCracha:true,
+            enviarEmailVisitante:false,
+            informarPresencaVisitado:true,
+            notificarVisitadoNexmove:false,
+            notificarVisitadoSms:true,
+            notificarVisitadoEmail:true,
+            identificarGaragem:true,
+            identificarVeiculo:true,   
+            internoTipoDocId:1,
+            internoMotivoId:2,
+            internoIngresso:0,
+            internoCrachaId:2,
+            prestadorTipoDocId:2,
+            prestadorGrupoId:1,
+            prestadorMotivoId:2,
+            desativarCampoVeiculo:false,
+            prestadorIngresso:0,
+            prestadorCrachaId:3,
+            visitanteTipoDocId:1,
+            visitanteGrupoId:2,
+            visitanteMotivoId:2,
+            visitanteIngresso:1,
+            visitanteCrachaId:2,
+            observacao:"obser agora"
+
+      
+  })
+  {   
+    mensagem
+    mensagemTipo
+    sucesso   
+    objeto
+  }
+}
+
+************DELETE************
+
+mutation {
+  reparticaoRecepcao_Excluir(id : 6
+  sessao:{
+      token : "gfgfgfhgfgfhg",
+      softwareLicenca : "NC1000",
+      solucaoEspecifica : "MARKET-PLACE",
+      solucaoIntegrada : "1",
+      aplicativo : "NEXCON",
+      aplicativoVersao : "PLUS"
+    }      
+  )
+  {   
+    mensagem
+    mensagemTipo
+    sucesso    
+    objeto
+  }
+}

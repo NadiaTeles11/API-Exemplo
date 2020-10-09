@@ -1,0 +1,194 @@
+************************************************************************************************************
+************************************************************************************************************
+QUERIES
+
+Obtem todos os veiculo grupo
+
+query {
+    veiculoGrupo{
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Obtem todos os veiculo grupo ordenando pelo nome ascendente
+
+query {
+    veiculoGrupo(order_by:{id:ASC}){
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Obtem todos os veiculo grupo ordenando pelo nome descendente
+
+query {
+    veiculoGrupo(order_by:{id:DESC}){
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Obtem o site pelo ID
+
+query {
+    veiculoGrupo(where:{id:51}){
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+
+
+Filtrando por nome
+
+query {
+    veiculoGrupo(where:{veiculoGrupo_contains:"2"}){
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Filtrando por campo e ordenando
+
+query {
+    veiculoGrupo(where:{veiculoGrupo_contains:"2"}order_by:{id:DESC}){
+    nodes{
+      id
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Filtrando por duas condições
+
+query {
+   veiculoGrupo(where:{AND: [{veiculoGrupo_contains : "2" }, {veiculoInterno: false }]} )   {
+    nodes{
+      id      
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Total de conjuntos cadastrados
+
+query {
+  veiculoGrupo  (first: 1)   {
+    totalCount
+  }
+}
+
+Seleciona os 3 primeiros, equivalente ao TOP 3 do SQL SERVER
+
+query {
+    veiculoGrupo(first: 3)     {
+    nodes{
+      id      
+      veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }     
+  }
+}
+
+Paginação com cursor 
+
+query {
+  veiculoGrupo(first: 3 order_by: {veiculoGrupo: ASC}) {
+    nodes {
+       id      
+       veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+Paginação proxima pagina
+
+query {
+  veiculoGrupo(order_by: {veiculoGrupo: ASC} first: 3, after: "Mg==") {
+    nodes {
+       id      
+       veiculoGrupo
+      veiculoInterno
+      veiculoVisitante
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+************************************************************************************************************
+************************************************************************************************************
+MUTATION
+
+mutation {
+  createVeiculoGrupo(inputVeiculoGrupo: {   
+    veiculoGrupo:"TESTE CREATEaC",
+    veiculoInterno: true,
+    veiculoVisitante:true
+    
+  })
+  {
+    id
+    veiculoGrupo
+    veiculoInterno
+    veiculoVisitante
+  }
+}
+
+mutation {
+  updateVeiculoGrupo(inputVeiculoGrupo: {  
+    id:56,
+    veiculoGrupo:"TESTE UPDATE",
+    veiculoInterno: true,
+    veiculoVisitante:false
+    
+  })
+  {
+    id
+    veiculoGrupo
+    veiculoInterno
+    veiculoVisitante
+  }
+}
+
+mutation {
+  deleteVeiculoGrupo(id: 54) 
+}
+
+
+
+
