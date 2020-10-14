@@ -14,11 +14,10 @@ namespace NC.Domain.Commands.PessoaExterna
 
     public class InserirPessoaExternaCommand : Notifiable, ICommand
     {      
-        #region Contrutores
-            
+        #region Contrutores            
         public InserirPessoaExternaCommand() { }
 
-        public InserirPessoaExternaCommand(byte[] imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, NcUsuarioAbordagem? abordagem, bool? status)
+        public InserirPessoaExternaCommand(byte[] imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, bool? status)
         {
             Imagem = imagem;
             Nome = nome;
@@ -59,8 +58,7 @@ namespace NC.Domain.Commands.PessoaExterna
             ExPessoaInterna = exPessoaInterna;
             DataCadastro = dataCadastro;
             OrigemCadastro = origemCadastro;
-            Presente = presente;
-            Abordagem = abordagem;
+            Presente = presente;          
             Status = status;
         }
 
@@ -112,7 +110,6 @@ namespace NC.Domain.Commands.PessoaExterna
         public bool? Presente { get; set; }
         public bool? Status { get; set; }
 
-        public NcUsuarioAbordagem? Abordagem { get; set; }
         public ICollection<NcVeiculo>? Veiculos { get; set; } =
          new List<NcVeiculo>();
         public ICollection<NcVagaGaragem>? Vagas { get; set; } =

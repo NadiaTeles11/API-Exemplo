@@ -5,7 +5,7 @@ using NC.Domain.Commands.PessoaExterna;
 using NC.Domain.Entities;
 using NC.Domain.Handlers;
 
-namespace NexcodeControls.Api.GraphQL.Mutations
+namespace NC.Api.GraphQL.Mutations
 {
     [ExtendObjectType(Name = "Mutation")]
     public class UsuarioPessoaExternaMutation

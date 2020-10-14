@@ -7,8 +7,8 @@ namespace NC.Api.GraphQL.Mutations.PessoaExterna
 {
     public class UsuarioPessoaExternaInserirInput
     {
-        public UsuarioPessoaExternaInserirInput() { }
-        public UsuarioPessoaExternaInserirInput(byte[]? imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, NcUsuarioAbordagemInput? abordagem, bool? status)
+        //public UsuarioPessoaExternaInserirInput() { }
+        public UsuarioPessoaExternaInserirInput(byte[]? imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, bool? status)
         {
             Imagem = imagem;
             Nome = nome;
@@ -49,8 +49,7 @@ namespace NC.Api.GraphQL.Mutations.PessoaExterna
             ExPessoaInterna = exPessoaInterna;
             DataCadastro = dataCadastro;
             OrigemCadastro = origemCadastro;
-            Presente = presente;
-            Abordagem = abordagem;
+            Presente = presente;          
             Status = status;
         }
 
@@ -95,8 +94,7 @@ namespace NC.Api.GraphQL.Mutations.PessoaExterna
         public bool? ExPessoaInterna { get; set; }
         public DateTime? DataCadastro { get; set; }
         public byte OrigemCadastro { get; set; }
-        public bool? Presente { get; set; }
-        public NcUsuarioAbordagemInput? Abordagem { get; set; }
+        public bool? Presente { get; set; }    
         public bool? Status { get; set; }
 
         #endregion
@@ -104,8 +102,8 @@ namespace NC.Api.GraphQL.Mutations.PessoaExterna
 
     public class UsuarioPessoaExternaAlterarInput
     {
-        public UsuarioPessoaExternaAlterarInput() { }
-        public UsuarioPessoaExternaAlterarInput(int id, byte[]? imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, NcUsuarioAbordagem? abordagem, bool? status)
+        //public UsuarioPessoaExternaAlterarInput() { }
+        public UsuarioPessoaExternaAlterarInput(int id, byte[]? imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, bool? status)
         {
             Id = id;
             Imagem = imagem;
@@ -194,27 +192,9 @@ namespace NC.Api.GraphQL.Mutations.PessoaExterna
         public DateTime? DataCadastro { get; set; }
         public byte OrigemCadastro { get; set; }
         public bool? Presente { get; set; }
-
-        public NcUsuarioAbordagemInput? Abordagem { get; set; }
         public bool? Status { get; set; }
 
         #endregion propriedades
     }
 
-
-    public class NcUsuarioAbordagemInput //: NcUsuarioAbordagem
-    {
-        #region Propriedades
-        public byte? Tipo { get; private set; }     
-        public string? Mensagem { get; set; }
-
-        #endregion
-    }
-
-    //public class NcUsuarioAbordagemAlterarInput : NcUsuarioAbordagem
-    //{
-    //    public NcUsuarioAbordagemAlterarInput(byte? tipo, string mensagem) : base(tipo, mensagem)
-    //    {
-    //    }
-    //}
 }

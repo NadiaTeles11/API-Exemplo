@@ -108,7 +108,7 @@ namespace NC.Domain.Handlers
                 command.DataCadastro,
                 command.OrigemCadastro,
                 command.Presente,
-                command.Abordagem,
+                null,
                 command.Status
 
 

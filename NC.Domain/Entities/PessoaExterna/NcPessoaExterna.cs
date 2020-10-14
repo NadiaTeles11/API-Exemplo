@@ -85,10 +85,7 @@ namespace NC.Domain.Entities
             Status = status;
         }
 
-
-
         // construtor com parametros facilita os testes
-
 
         #endregion
 
@@ -141,11 +138,11 @@ namespace NC.Domain.Entities
         public NcUsuarioAbordagem? Abordagem { get; private set; }
         public bool? Status { get; private set; }
 
-        //public ICollection<NcVeiculo> Veiculos { get; set; } =
-        //  new List<NcVeiculo>();
+        public ICollection<NcVeiculo> Veiculos { get; set; } =
+          new List<NcVeiculo>();
 
-        //public ICollection<NcVagaGaragem> Vagas { get; set; } =
-        //new List<NcVagaGaragem>();
+        public ICollection<NcVagaGaragem> Vagas { get; set; } =
+        new List<NcVagaGaragem>();
 
 
         #endregion

@@ -13,8 +13,6 @@ using NC.Api.GraphQL.Mutations;
 using NC.Api.GraphQL.Query;
 using NC.Api.GraphQL.Types;
 using NC.Data.Context;
-using NC.Domain.Commands.PessoaExterna;
-using NexcodeControls.Api.GraphQL.Mutations;
 using System.Text;
 
 namespace NC.Api
