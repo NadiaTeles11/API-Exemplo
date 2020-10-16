@@ -30,7 +30,7 @@ namespace NC.Api.DependencyInjection
             services.AddScoped<PessoaExternaHandler, PessoaExternaHandler>();
 
             //services.AddDbContext<NCContext>(
-            //   options => options.UseSqlServer(@"Password=nexcode;Persist Security Info=True;User ID=sa;Initial Catalog=NexcodeControls2020;Data Source=LOCALHOST\SQLEXPRESS01")
+            //   options => options.UseSqlServer(@"Password=Banco;Persist Security Info=True;User ID=sa;Initial Catalog=BancoControls2020;Data Source=LOCALHOST\SQLEXPRESS01")
             //);
 
         }
