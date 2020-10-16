@@ -1,12 +1,9 @@
 ﻿using Flunt.Notifications;
 using Flunt.Validations;
-using NC.Domain.Entities.UsuarioAbordagem;
-using System;
-using NC.Shared.Commands;
-using NC.Domain.Entities.Veiculo;
-using NC.Domain.Entities.Garagem;
-using System.Collections.Generic;
 using NC.Domain.Entities;
+using NC.Shared.Commands;
+using System;
+using System.Collections.Generic;
 
 namespace NC.Domain.Commands.PessoaExterna
 {
@@ -109,12 +106,7 @@ namespace NC.Domain.Commands.PessoaExterna
         public byte OrigemCadastro { get; set; }
         public bool? Presente { get; set; }
         public bool? Status { get; set; }
-
-        public ICollection<NcVeiculo>? Veiculos { get; set; } =
-         new List<NcVeiculo>();
-        public ICollection<NcVagaGaragem>? Vagas { get; set; } =
-        new List<NcVagaGaragem>();
-
+              
         #endregion
 
         #region Validações

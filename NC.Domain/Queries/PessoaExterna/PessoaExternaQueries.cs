@@ -19,28 +19,6 @@ namespace NC.Domain.Queries
             //return x => x.EntidadeId == id;
             return null;
         }         
-        public static Expression<Func<NcPessoaExterna, bool>> ObterAtivos()
-        {
-            return x => x.Status == true;
-        }
-        public static Expression<Func<NcPessoaExterna, bool>> ObterInativos()
-        {
-            return x => x.Status == false;
-        }
-        public static Expression<Func<NcPessoaExterna, bool>> ObterPorEmail(string email)
-        {
-            return x => x.Email == email;
-        }
-        public static Expression<Func<NcPessoaExterna, bool>> ObterPorDocumento(string documentoNumero)
-        {
-            return x => x.DocumentoNumero == documentoNumero;
-        }
-        public static Expression<Func<NcPessoaExterna, bool>> ObterPorPeriodo(string document, DateTime date, bool active)
-        {
-            return x =>
-                x.DocumentoNumero == document &&
-                x.Status == true &&
-                x.DataCadastro == date.Date;
-        }
+     
     }
 }

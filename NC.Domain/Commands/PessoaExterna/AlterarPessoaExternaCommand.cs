@@ -1,8 +1,7 @@
 ﻿using Flunt.Notifications;
 using Flunt.Validations;
-using NC.Domain.Entities.UsuarioAbordagem;
-using System;
 using NC.Shared.Commands;
+using System;
 
 namespace NC.Domain.Commands.PessoaExterna
 {
@@ -18,7 +17,7 @@ namespace NC.Domain.Commands.PessoaExterna
         // construtor sem parametros foi criado devido a criação do outro,  porem ele sozinho nunca deve ser criado para que nada de fora altere o que está aqui dentro
         public AlterarPessoaExternaCommand() { }
 
-        public AlterarPessoaExternaCommand(int id, byte[] imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, NcUsuarioAbordagem? abordagem, bool? status)
+        public AlterarPessoaExternaCommand(int id, byte[] imagem, string nome, string grupo, string telefoneFixo, string telefoneMovel, string email, string observacao, string pessoaDocTipo, string documentoNumero, DateTime? nascimento, int? empresaId, string empresaNome, string complemento1, string complemento2, string complemento3, string complemento4, string enderecoLogradouro, string enderecoNumero, string enderecoComplemento, string enderecoBairro, string enderecoCep, string enderecoCidade, string enderecoEstado, string enderecoPais, DateTime? contratacaoInicio, DateTime? contratacaoFim, DateTime? integracaoInicio, DateTime? integracaoFim, DateTime? segurancaInicio, DateTime? segurancaFim, DateTime? exameMedicoInicio, DateTime? exameMedicoFim, bool? ignorarBiometria, DateTime? ultimaVisitaDataHora, int ultimoVisitadoId, string ultimoMotivo, bool? exPessoaInterna, DateTime? dataCadastro, byte origemCadastro, bool? presente, bool? status)
         {
             Id = id;
             Imagem = imagem;
@@ -60,8 +59,7 @@ namespace NC.Domain.Commands.PessoaExterna
             ExPessoaInterna = exPessoaInterna;
             DataCadastro = dataCadastro;
             OrigemCadastro = origemCadastro;
-            Presente = presente;
-            Abordagem = abordagem;
+            Presente = presente;          
             Status = status;
         }
 
@@ -114,8 +112,7 @@ namespace NC.Domain.Commands.PessoaExterna
         public bool? ExPessoaInterna { get; set; }
         public DateTime? DataCadastro { get; set; }
         public byte OrigemCadastro { get; set; }
-        public bool? Presente { get; set; }
-        public NcUsuarioAbordagem? Abordagem { get; set; }
+        public bool? Presente { get; set; }      
         public bool? Status { get; set; }
 
         #endregion

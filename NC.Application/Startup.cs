@@ -95,8 +95,7 @@ namespace NC.Api
              .AddType<PessoaExternaQuery>()             
             
              .AddMutationType(d => d.Name("Mutation"))            
-             .AddType<UsuarioPessoaExternaMutation>()
-         
+             .AddType<UsuarioPessoaExternaMutation>()         
 
              .Create());
 

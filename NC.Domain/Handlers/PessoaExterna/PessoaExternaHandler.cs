@@ -67,51 +67,10 @@ namespace NC.Domain.Handlers
             //var visitado = new NcPessoaInterna();
 
             // Gera a PessoaExterna
-            var pessoaExterna = new NcPessoaExterna(
-                command.Imagem,
+            var pessoaExterna = new NcPessoaExterna(               
                 command.Nome,
                 command.Grupo,
-                command.TelefoneFixo,
-                command.TelefoneMovel,
-                command.Email,
-                command.Observacao,
-                command.PessoaDocTipo,
-                command.DocumentoNumero,
-                command.Nascimento,
-                command.EmpresaId,
-                command.EmpresaNome,
-                command.Complemento1,
-                command.Complemento2,
-                command.Complemento3,
-                command.Complemento4,
-                command.EnderecoLogradouro,
-                command.EnderecoNumero,
-                command.EnderecoComplemento,
-                command.EnderecoBairro,
-                command.EnderecoCep,
-                command.EnderecoCidade,
-                command.EnderecoEstado,
-                command.EnderecoPais,
-                command.ContratacaoInicio,
-                command.IntegracaoInicio,
-                command.ContratacaoFim,
-                command.IntegracaoFim,
-                command.SegurancaInicio,
-                command.SegurancaFim,
-                command.ExameMedicoInicio,
-                command.ExameMedicoFim,
-                command.IgnorarBiometria,
-                command.UltimaVisitaDataHora,
-                command.UltimoVisitadoId,
-                command.UltimoMotivo,
-                command.ExPessoaInterna,
-                command.DataCadastro,
-                command.OrigemCadastro,
-                command.Presente,
-                null,
-                command.Status
-
-
+                command.TelefoneFixo                    
                 );
 
             // Salva no banco            
@@ -132,14 +91,6 @@ namespace NC.Domain.Handlers
                 return new GenericCommandResult(false, "Não foi possivel alterar o cadastro", MensagemTipo.ADVERTENCIA, command.Notifications);
             }
 
-            //Verificar se a pessoa esta cadastrada
-            //NcPessoaExterna pessoaExterna = _repository.ObterPorNome(command.Nome);
-            //if (pessoaExterna != null && pessoaExterna.Id > 0 && command.Id != pessoaExterna.Id)
-            //{
-            //    //AddNotification("Documento", "Este documento já está em uso");
-            //    return new GenericCommandResult(false, "pessoa Externa já está em uso", MensagemTipo.ADVERTENCIA, null);
-            //}
-
             //Verificar se documento esta cadastrado
             NcPessoaExterna pessoa = _repository.ObterPorDocumentoTipo(command.DocumentoNumero, command.PessoaDocTipo);
 
@@ -149,26 +100,10 @@ namespace NC.Domain.Handlers
                 return new GenericCommandResult(false, "Este documento já está em uso", MensagemTipo.ADVERTENCIA, null);
             }
 
-            //Verificar se email esta cadastrado para outro usuario
-            pessoa = _repository.ObterPorEmail(command.Email);
-            if (pessoa != null && pessoa.Id > 0 && command.Id != pessoa.Id)
-            {
-                //AddNotification("Email", "Este Email já está em uso");
-                return new GenericCommandResult(false, "Este e-mail já está em uso", MensagemTipo.ADVERTENCIA, null);
-            }
-
             //Checar as notificações
             if (Invalid)
                 return new GenericCommandResult(false, "Não foi possível alterar o cadastro", MensagemTipo.ADVERTENCIA, null);
 
-
-            ////Gerar os VOs
-            ////var nome = new Nomes(command.Nome);
-            ////var email = new Email(command.Email);
-            ////var documento = new NcDocumentoGrupo();
-            ////var grupo = new NcPessoaGrupo();
-            ////var visitado = new NcPessoaInterna();
-          
             //Obtem o cadastro pelo id
             pessoa = _repository.ObterPorId(command.Id);
 
@@ -178,49 +113,11 @@ namespace NC.Domain.Handlers
             }
             else
             {
-                pessoa.Alterar(
-                command.Imagem,
+                pessoa.Alterar(               
                 command.Nome,
                 command.Grupo,
-                command.TelefoneFixo,
-                command.TelefoneMovel,
-                command.Email,
-                command.Observacao,
-                command.PessoaDocTipo,
-                command.DocumentoNumero,
-                command.Nascimento,
-                command.EmpresaId,
-                command.EmpresaNome,
-                command.Complemento1,
-                command.Complemento2,
-                command.Complemento3,
-                command.Complemento4,
-                command.EnderecoLogradouro,
-                command.EnderecoNumero,
-                command.EnderecoComplemento,
-                command.EnderecoBairro,
-                command.EnderecoCep,
-                command.EnderecoCidade,
-                command.EnderecoEstado,
-                command.EnderecoPais,
-                command.ContratacaoInicio,
-                command.IntegracaoInicio,
-                command.ContratacaoFim,
-                command.IntegracaoFim,
-                command.SegurancaInicio,
-                command.SegurancaFim,
-                command.ExameMedicoInicio,
-                command.ExameMedicoFim,
-                command.IgnorarBiometria,
-                command.UltimaVisitaDataHora,
-                command.UltimoVisitadoId,
-                command.UltimoMotivo,
-                command.ExPessoaInterna,
-                command.DataCadastro,
-                command.OrigemCadastro,
-                command.Presente,
-                command.Abordagem,
-                command.Status);
+                command.TelefoneFixo
+                );
             }
            
              // Salva no banco            

@@ -100,55 +100,6 @@ namespace NC.Data.Repositories
               .OrderBy(x => x.Nome);
         }
 
-        public IEnumerable<NcPessoaExterna> ObterTodosAtivos()
-        {
-            //AsNoTracking: sempre usar isso
-            return _context.NcPessoaExterna
-                .AsNoTracking()
-                .Where(PessoaExternaQueries.ObterAtivos())
-                .OrderBy(x => x.Id);
-        }
-
-        public IEnumerable<NcPessoaExterna> ObterTodosInativos()
-        {
-            //AsNoTracking: sempre usar isso
-            return _context.NcPessoaExterna
-                .AsNoTracking()     //Se vc não usar esse objeto para update ou delete, use sempre o AsNoTracking
-                .Where(PessoaExternaQueries.ObterInativos())       //Utilizar as queries criadas e testadas aqui
-                .OrderBy(x => x.Nome);
-        }
-
-        public NcPessoaExterna ObterPorEmail(string email)
-        {
-            return _context
-               .NcPessoaExterna
-               .FirstOrDefault(x => x.Email == email);
-        }
-
-        public NcPessoaExterna ObterPorDocumento(string documentoNumero)
-        {  
-            return _context
-                .NcPessoaExterna
-                .FirstOrDefault(x => x.DocumentoNumero == documentoNumero);
-
-        }
-
-        public NcPessoaExterna ObterPorDocumentoTipo(string documentoNumero, string tipo)
-        {
-            return _context
-                .NcPessoaExterna
-                .FirstOrDefault(x => x.DocumentoNumero == documentoNumero && x.PessoaDocTipo == tipo);
-
-        }
-
-
-        public IEnumerable<NcPessoaExterna> ObterPorPeriodo(string documentoNumero, DateTime data, bool ativo)
-        {
-            return _context.NcPessoaExterna
-              .AsNoTracking()
-              .Where(PessoaExternaQueries.ObterPorPeriodo(documentoNumero, data, ativo))
-              .OrderBy(x => x.Nome);
-        }
 
         public NcPessoaExterna ObterPorNome(string nome)
         {
@@ -157,6 +108,34 @@ namespace NC.Data.Repositories
                .FirstOrDefault(x => x.Nome == nome);           //FirstOrDefault traz o primeiro ou nulo
         }
 
-        
+        public NcPessoaExterna ObterPorEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public NcPessoaExterna ObterPorDocumento(string documentoNumero)
+        {
+            throw new NotImplementedException();
+        }
+
+        public NcPessoaExterna ObterPorDocumentoTipo(string documentoNumero, string tipo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<NcPessoaExterna> ObterPorPeriodo(string documentoNumero, DateTime data, bool ativo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<NcPessoaExterna> ObterTodosAtivos()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<NcPessoaExterna> ObterTodosInativos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

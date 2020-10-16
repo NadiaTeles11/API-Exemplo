@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using NC.Domain.Entities;
 using NC.Domain.Handlers;
-using NC.Domain.Handlers.Entidade;
 
 namespace NC.Api.DependencyInjection
 {
@@ -14,12 +12,9 @@ namespace NC.Api.DependencyInjection
             //AddScope: significa que entrou na aplicação e em 10 metodos ele precisa usar a interface por ex IPessoaGrupoService, ele irá usar a mesma instancia
             //AddSingleton: problematico, Startou a aplicação no servidor, jamais ele vai mudar. É uma vez so. Quase não se usa essa opção. se for rodar no servidor apenas uma unica vez.
 
-
-            
+                        
             services.AddTransient<PessoaExternaHandler, PessoaExternaHandler>();
-            services.AddTransient<EmpresaHandler, EmpresaHandler>();
-            services.AddTransient<UsuarioAbordagemHandler, UsuarioAbordagemHandler>();
-
+        
 
         }
     }
